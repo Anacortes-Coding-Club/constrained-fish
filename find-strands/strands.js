@@ -68,29 +68,10 @@ function explore(row, col, word = "", visited = []) {
   }
 }
 
-// march 31
-puzzle = `refnan
-ifloig
-buytal
-lnbnel
-oeiran
-nmuhft
-sllsie
-tarinr`
-  .split("\n")
-  .map((row) => row.split(""));
+const data = fs.readFileSync("strands.json", "utf8");
+const strands = JSON.parse(data).strands;
+let puzzle = strands[3].puzzle.map((row) => row.split(""));
 
 //explore(0, 0);
 //explore(0, puzzle[0].length - 1);
 explore(puzzle.length - 1, 3);
-
-// puzzle = `ersiti
-// tebdfr
-// chaore
-// uuwapc
-// refnli
-// bfaich
-// ruuoai
-// ealnos`
-//   .split("\n")
-//   .map((row) => row.split(""));
