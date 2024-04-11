@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/addons/p5.sound.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8" />
+
+  </head>
+  <body>
+    <main>
+    </main>
+    <script>
+      
+let puzzle = [
+  "atriod",
+  "remper",
+  "poacty",
+  "thtlhl",
+  "imoipe",
+  "egfans",
+  "rirhal",
+  "lghtsf"
+ ];
+
+function setup() {
+  createCanvas(400, 500);
+}
+
+function gray_circle(idx) {
+  let x = 50+idx%10*50;
+  let y = 50+int(idx/10)*50;
+  circle(x,y-2,40);
+}
+
+function gray_line(idx, idx2) {
+  let x = 50+idx%10*50;
+  let y = 50+int(idx/10)*50;
+  let x2 = 50+idx2%10*50;
+  let y2 = 50+int(idx2/10)*50;  
+  push();
+  strokeWeight(12);
+
+  line(x,y,x2,y2)
+  pop();  
+}
+
+function gray_path(path) { 
+  push();
+  strokeWeight(0);  
+  fill(220); 
+  stroke(220);  
+  for (let i = 0; i < path.length-1; i++) {
+    let idx = path[i];
+    let dest = path[i+1];
+    
+    gray_circle(idx);
+    gray_circle(dest);
+    gray_line(idx, dest);    
+  }
+  pop();
+  
+}
+
+function draw() {
+  background(255);
+
+  gray_path([1,2,3,13,4,5]);
+  gray_path([75,65,64,74,63])
+ 
+
+  textFont('Arial');
+  textSize(25);
+  textAlign(CENTER,CENTER);
+  for (let y=0; y<8; y++) {
+    for (let x=0; x<6; x++) {
+      text(puzzle[y].charAt(x).toUpperCase(), 50+x*50, 50+y*50);
+    }
+  }
+}      
+
+    </script>
+  </body>
+</html>
