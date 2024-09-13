@@ -1,0 +1,29 @@
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Outer rectangle -->
+  <rect x="50" y="50" width="300" height="200" stroke="black" stroke-width="2" fill="none" />
+
+  <!-- Diagonal lines -->
+  <line x1="88" y1="50" x2="312" y2="250" stroke="black" stroke-width="2" />
+  <line x1="50" y1="90" x2="350" y2="210" stroke="black" stroke-width="2" />
+
+  <!-- Shaded areas -->
+  <polygon points="50,50 50,90 200,150 88,50" fill="lightgray" stroke="black" stroke-width="1" />
+  <polygon points="200,150 350,210 350,250 312,250" fill="lightgray" stroke="black" stroke-width="1" /> 
+
+  <!-- Left side labels -->
+  <text x="35" y="75" font-family="Arial" font-size="14" fill="black">1</text>
+  <text x="35" y="175" font-family="Arial" font-size="14" fill="black">4</text>
+
+  <!-- Top side labels -->
+  <text x="65" y="42" font-family="Arial" font-size="14" fill="black">1</text>
+  <text x="230" y="42" font-family="Arial" font-size="14" fill="black">7</text>
+
+  <!-- Right side labels -->
+  <text x="357" y="130" font-family="Arial" font-size="14" fill="black">4</text>
+  <text x="357" y="235" font-family="Arial" font-size="14" fill="black">1</text>
+
+  <!-- Bottom side labels -->
+  <text x="150" y="267" font-family="Arial" font-size="14" fill="black">7</text>
+  <text x="330" y="267" font-family="Arial" font-size="14" fill="black">1</text>
+
+</svg>
