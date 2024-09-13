@@ -35,6 +35,7 @@ function searchWord(word) {
 }
 
 function explore(row, col, word = "", visited = []) {
+  let valid = [];
   // exclude out of bounds
   if (row < 0 || row >= puzzle.length || col < 0 || col >= puzzle[0].length) {
     return;
@@ -55,7 +56,10 @@ function explore(row, col, word = "", visited = []) {
       return;
     }
     // print valid words
-    if (word.length > 3 && found) console.log(word);
+    if (word.length > 3 && found) {
+      //console.log(word);
+      valid.push({ word: word, visited: visited });
+    }
   }
   // continue exploring
   for (let i = -1; i <= 1; i++) {
@@ -63,15 +67,42 @@ function explore(row, col, word = "", visited = []) {
       if (i === 0 && j === 0) {
         continue;
       }
-      explore(row + i, col + j, word, visited);
+      let found_words = explore(row + i, col + j, word, visited);
+      if (found_words) found_words.forEach((word) => valid.push(word));
     }
   }
+  return valid;
 }
 
 const data = fs.readFileSync("strands.json", "utf8");
 const strands = JSON.parse(data).strands;
-let puzzle = strands[3].puzzle.map((row) => row.split(""));
+let puzzle = strands[0].puzzle.map((row) => row.split(""));
 
 //explore(0, 0);
 //explore(0, puzzle[0].length - 1);
-explore(puzzle.length - 1, 3);
+
+function spangrams(found, check) {
+  // look for spangrams
+  let span = found.filter(({ word, visited }) => {
+    return visited.some(check);
+  });
+  if (span.length > 0) {
+    //console.log("found", span.length, "up at index");
+    console.dir(span);
+  }
+  return span;
+}
+
+for (let i = 0; i < puzzle[0].length; i++) {
+  let found = explore(puzzle.length - 1, i);
+  spangrams(found, (n) => n < 10);
+  found = explore(0, i);
+  spangrams(found, (n) => n >= 70);
+}
+
+for (let j = 0; j < puzzle.length; j++) {
+  let found = explore(j, 0);
+  spangrams(found, (n) => n % 10 == 7);
+  found = explore(j, puzzle[0].length - 1);
+  spangrams(found, (n) => n % 10 == 0);
+}
