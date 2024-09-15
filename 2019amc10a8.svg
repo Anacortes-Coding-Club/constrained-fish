@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="100" fill="white">
+  <!-- Define the element to be repeated -->
+  <defs>
+    <g id="boxUp">
+      <rect width="25" height="25" y="5" stroke="black" fill="none"/>
+      <line x1="25" y1="5" x2="35" y2="0" stroke="black"/>
+    </g>
+    <g id="boxDown">
+      <rect width="25" height="25" x="10" stroke="black" fill="none"/>
+      <line x1="10" y1="25" x2="0" y2="30" stroke="black"/>
+    </g>
+  </defs>
+  
+  <!-- Use the defined shape multiple times -->
+  <line x1="0" y1="55" x2="480" y2="55" stroke="black"/>
+  <use href="#boxUp" x="30" y="25" />
+  <use href="#boxDown" x="70" y="55" />
+  <use href="#boxUp" x="130" y="25" />
+  <use href="#boxDown" x="170" y="55" />
+  <use href="#boxUp" x="230" y="25" />
+  <use href="#boxDown" x="270" y="55" />
+  <use href="#boxUp" x="330" y="25" />
+  <use href="#boxDown" x="370" y="55" />
+  <use href="#boxUp" x="430" y="25" />
+</svg>
