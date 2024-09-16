@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Math via XML</title>
+    <script
+      type="text/javascript"
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+    <style>
+      .container {
+        overflow: hidden; /* Clear the float */
+      }
+
+      .image {
+        float: right;
+        margin-left: 20px; /* Add some space between text and image */
+      }
+
+      svg {
+        display: inline-block; /* Allow SVG to respect width and height */
+      }
+    </style>
+  </head>
+  <body>
+    <div id="goeshere">
+      <h2>NWML December 12, 2018</h2>
+    </div>
+
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [["\\(", "\\)"]],
+        },
+        svg: {
+          fontCache: "global",
+        },
+      };
+
+      function getProblems(doc) {
+        const problems = doc.getElementsByTagName("problem");
+        const problemList = document.createElement("ol");
+
+        for (let i = 0; i < problems.length; i++) {
+          const problem = problems[i];
+          const listItem = document.createElement("li");
+          problemList.appendChild(listItem);
+          const problemElement = document.createElement("div");
+          problemElement.setAttribute("class", "container");
+          listItem.appendChild(problemElement);
+
+          const questionWrapper = problem.getElementsByTagName("question")[0];
+          const questionParts = questionWrapper.childNodes;
+          for (let i = 0; i < questionParts.length; i++) {
+            const questionPart = questionParts[i];
+            if (questionPart.tagName === "text") {
+              const question = document.createElement("p");
+              question.textContent = questionPart.textContent;
+              // Replace $...$ with \( ... \)
+              const latexPattern = /\$([^$]+)\$/g;
+              question.textContent = question.textContent.replace(
+                latexPattern,
+                "\\( $1 \\)"
+              );
+              problemElement.appendChild(question);
+            } else if (questionPart.tagName === "image") {
+              const image = questionPart.getElementsByTagName("svg")[0];
+              image.setAttribute("class", "image");
+              problemElement.appendChild(image);
+            }
+          }
+          const answerDiv = document.createElement("div");
+          const answerElements = problem.getElementsByTagName("answer");
+          for (var j = 0; j < answerElements.length; j++) {
+            var answerElement = answerElements[j];
+
+            const answer = document.createElement("span");
+            const letter = String.fromCharCode(65 + j); // Generate letter (A, B, C, etc.)
+            // Replace $...$ with \( ... \)
+            const latexPattern = /\$([^$]+)\$/g;
+            const answerDisplay = answerElement.textContent.replace(
+              latexPattern,
+              "\\( $1 \\)"
+            );
+            answer.innerHTML = `(${letter}) ${answerDisplay} &emsp;`;
+            answerDiv.appendChild(answer);
+          }
+          problemElement.appendChild(answerDiv);
+        }
+        return problemList;
+      }
+
+      fetch("20181212.xml")
+        .then((response) => response.text())
+        .then((text) => {
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(text, "text/xml");
+          console.log(doc.documentElement.nodeName);
+          const problemList = getProblems(doc);
+          document.getElementById("goeshere").appendChild(problemList);
+
+          MathJax.typeset();
+        });
+    </script>
+  </body>
+</html>

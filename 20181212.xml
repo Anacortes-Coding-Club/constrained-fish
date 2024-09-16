@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test date="2018-12-12" host="Anacortes High School">
+    <problem>
+        <question id="1">
+            <image display="right">
+                <svg width="170" height="120" viewbox="40 0 175 100"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="140" cy="45" r="15" stroke="black" fill="white" />
+                    <circle cx="60" cy="45" r="15" stroke="black" fill="white" />
+
+                    <circle cx="128" cy="35" r="15" stroke="black" fill="white" />
+                    <circle cx="128" cy="60" r="15" stroke="black" fill="white" />
+
+                    <circle cx="72" cy="35" r="15" stroke="black" fill="white" />
+                    <circle cx="72" cy="60" r="15" stroke="black" fill="white" />
+
+                    <circle cx="114" cy="25" r="15" stroke="black" fill="white" />
+                    <circle cx="114" cy="50" r="15" stroke="black" fill="white" />
+                    <circle cx="114" cy="75" r="15" stroke="black" fill="white" />
+
+                    <circle cx="86" cy="25" r="15" stroke="black" fill="white" />
+                    <circle cx="86" cy="50" r="15" stroke="black" fill="white" />
+                    <circle cx="86" cy="75" r="15" stroke="black" fill="white" />
+
+                    <circle cx="100" cy="15" r="15" stroke="black" fill="white" />
+                    <circle cx="100" cy="40" r="15" stroke="black" fill="white" />
+                    <circle cx="100" cy="65" r="15" stroke="black" fill="white" />
+                    <circle cx="100" cy="90" r="15" stroke="black" fill="white" />
+                </svg>
+            </image>
+            <text>Oranges are stacked in the shape of a complete pyramid.
+                Each triangular-shaped layer has equal numbers of oranges on each side.
+                A 4-layer display is shown. What is the total number of oranges needed
+                to build an 11-layer complete pyramid? NOTE: In a complete pyramid,
+                the interior is filled with as many oranges as possible.</text>
+        </question>
+        <answers>
+            <answer>78</answer>
+            <answer>220</answer>
+            <answer>286</answer>
+            <answer>364</answer>
+            <answer>None</answer>
+        </answers>
+    </problem>
+    <problem>
+        <question id="2">
+            <text>A parabola has a vertex at (4, -5) and has two x-intercepts, one positive and one
+                negative. If this parabola is the graph of $y = ax^2 + bx + c$, which of $a$, $b$,
+                and
+                $c$ must be positive?</text>
+        </question>
+        <answers>
+            <answer>$a$ and $c$</answer>
+            <answer>$a$ and $b$</answer>
+            <answer>$b$ and $c$</answer>
+            <answer>$a$ only</answer>
+            <answer>$c$ only</answer>
+        </answers>
+    </problem>
+    <problem>
+        <question id="3">
+            <text><![CDATA[If $N > 1$, then $\sqrt[3]{N\sqrt[3]{N\sqrt[3]N}} =$]]></text>
+        </question>
+        <answers>
+            <answer>$N^{\frac{1}{27}}$</answer>
+            <answer>$N^{\frac{1}{9}}$</answer>
+            <answer>$N^{\frac{4}{9}}$</answer>
+            <answer>$N^{\frac{13}{27}}$</answer>
+            <answer>None of the above</answer>
+        </answers>
+    </problem>
+    <problem>
+        <question id="4">
+            <image display="right">
+                <svg class="image" width="200" height="100" xmlns="http://www.w3.org/2000/svg">
+                    <rect
+                        x="10"
+                        y="15"
+                        width="60"
+                        height="60"
+                        fill="white"
+                        stroke="black"
+                    />
+                    <rect
+                        x="70"
+                        y="15"
+                        width="40"
+                        height="60"
+                        fill="lightgrey"
+                        stroke="black"
+                    />
+                    <rect
+                        x="100"
+                        y="15"
+                        width="60"
+                        height="60"
+                        fill="white"
+                        stroke="black"
+                    />
+                    <line x1="10" y1="75" x2="160" y2="15" stroke="black" />
+                    <!-- left triangle -->
+                    <text x="40" y="52" text-anchor="middle" dominant-baseline="central">
+                        13
+                    </text>
+                    <text x="40" y="85" text-anchor="middle" dominant-baseline="central">
+                        12
+                    </text>
+                    <text x="76" y="62" text-anchor="middle" dominant-baseline="central">
+                        5
+                    </text>
+
+                    <!-- right triangle -->
+                    <text x="94" y="28" text-anchor="middle" dominant-baseline="central">
+                        5
+                    </text>
+                    <text x="130" y="6" text-anchor="middle" dominant-baseline="central">
+                        12
+                    </text>
+                    <text x="130" y="38" text-anchor="middle" dominant-baseline="central">
+                        13
+                    </text>
+                </svg>
+            </image>
+            <text>Squares are drawn as shown on the long sides of a shaded rectangle. A diagonal of
+                the resulting figure cuts off a 5-12-13 triangle from each square, as shown. What is
+                the area of the shaded rectangle?</text>
+        </question>
+        <answers>
+            <answer>24</answer>
+            <answer>28.8</answer>
+            <answer>36.2</answer>
+            <answer>57.6</answer>
+            <answer>None of the above</answer>
+        </answers>
+    </problem>
+    <problem>
+        <question id="5">
+            <text>Independently of each other, two numbers are selected at random among the positive
+                real numbers less than 2, with all numbers equally likely to be selected. What is
+                the probability that the sum of the squares of the two selected numbers is less than
+                4?</text>
+        </question>
+        <answers>
+            <answer> $\frac{\sqrt{\pi}}{4}$</answer>
+            <answer> $\frac{\sqrt{\pi}}{2}$</answer>
+            <answer> $\frac{\pi}{16}$</answer>
+            <answer> $\frac{\sqrt{\pi}}{8}$</answer>
+            <answer correct="true">$\frac{\pi}{4}$</answer>
+        </answers>
+    </problem>
+    <problem>
+        <question id="6">
+            <text>Let $n$ be the largest integer that is the product of exactly 3 distinct prime
+                numbers, $d$, $e$ and $10d + e$, where $d$ and $e$ are single digits. What is the
+                sum of the digits of $n$?</text>
+        </question>
+        <answers>
+            <answer>12</answer>
+            <answer>15</answer>
+            <answer>18</answer>
+            <answer>21</answer>
+            <answer>24</answer>
+        </answers>
+    </problem>
+    <problem>
+        <question id="7">
+            <image display="right">
+                <svg width="120" height="100"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <rect
+                        x="10"
+                        y="45"
+                        width="24"
+                        height="24"
+                        fill="none"
+                        stroke="black"
+                    />
+                    <text
+                        x="22"
+                        y="58"
+                        text-anchor="middle"
+                        dominant-baseline="central"
+                    >
+                        1
+                    </text>
+                    <rect
+                        x="34"
+                        y="45"
+                        width="24"
+                        height="24"
+                        fill="none"
+                        stroke="black"
+                    />
+                    <text
+                        x="46"
+                        y="58"
+                        text-anchor="middle"
+                        dominant-baseline="central"
+                    >
+                        2
+                    </text>
+                    <rect
+                        x="58"
+                        y="21"
+                        width="24"
+                        height="24"
+                        fill="none"
+                        stroke="black"
+                    />
+                    <text
+                        x="70"
+                        y="34"
+                        text-anchor="middle"
+                        dominant-baseline="central"
+                    >
+                        4
+                    </text>
+                    <rect
+                        x="58"
+                        y="45"
+                        width="24"
+                        height="24"
+                        fill="none"
+                        stroke="black"
+                    />
+                    <text
+                        x="70"
+                        y="58"
+                        text-anchor="middle"
+                        dominant-baseline="central"
+                    >
+                        32
+                    </text>
+                    <rect
+                        x="58"
+                        y="69"
+                        width="24"
+                        height="24"
+                        fill="none"
+                        stroke="black"
+                    />
+                    <text
+                        x="70"
+                        y="81"
+                        text-anchor="middle"
+                        dominant-baseline="central"
+                    >
+                        8
+                    </text>
+                    <rect
+                        x="82"
+                        y="45"
+                        width="24"
+                        height="24"
+                        fill="none"
+                        stroke="black"
+                    />
+                    <text
+                        x="94"
+                        y="58"
+                        text-anchor="middle"
+                        dominant-baseline="central"
+                    >
+                        16
+                    </text>
+                </svg>
+            </image>
+            <text>Three cubes are each formed from the pattern shown. They are then stacked on a
+                table
+                one on top of another so that the 13 visible numbers have the greatest possible sum.
+                What is that sum?</text>
+        </question>
+        <answers>
+            <answer>167</answer>
+            <answer>164</answer>
+            <answer>159</answer>
+            <answer>154</answer>
+            <answer>150</answer>
+        </answers>
+    </problem>
+    <problem>
+        <question>
+            <text><![CDATA[If x and y are real numbers, with $x > y$ and $xy = 1$, find the minimum possible value for $\dfrac{x^2+y^2}{x-y}$]]></text>
+        </question>
+        <answers>
+            <answer>$2\sqrt{2}$</answer>
+            <answer>$3\sqrt{2}$</answer>
+            <answer>$\dfrac{3\sqrt{2}}{2}$</answer>
+            <answer>$2\sqrt{3}$</answer>
+            <answer>6</answer>
+        </answers>
+    </problem>
+    <problem id="9">
+        <question>
+            <text>The fleeble factory was supposed to fill a certain order for fleebles in 12 days.
+                The factory produced 25% more fleebles each day than it was supposed to, and as a
+                result it filed the order in 10 days, producing 42 extra fleebles besides. If the
+                same number of fleebles were produced each day, what was that number?</text>
+        </question>
+        <answers>
+            <answer>105</answer>
+            <answer>96</answer>
+            <answer>90</answer>
+            <answer>84</answer>
+            <answer>None of the above</answer>
+        </answers>
+    </problem>
+    <problem id="10">
+        <question>
+            <text>How many ways can a set of 6 different elements be divided into 3 subsets of 2
+                each?</text>
+        </question>
+        <answers>
+            <answer>20</answer>
+            <answer>30</answer>
+            <answer>90</answer>
+            <answer>120</answer>
+            <answer>None of the above</answer>
+        </answers>
+    </problem>
+
+</test>
