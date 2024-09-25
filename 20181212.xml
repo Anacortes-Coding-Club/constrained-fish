@@ -290,6 +290,11 @@
             <answer>$2\sqrt{3}$</answer>
             <answer>6</answer>
         </answers>
+        <solution>
+            <link>
+                https://nyciml.org/wp-content/uploads/1984_1985_Fall_SeniorA_Contest_COMPLETE.pdf#page=8
+            </link>
+        </solution>
     </problem>
     <problem id="9">
         <question>
@@ -319,5 +324,71 @@
             <answer>None of the above</answer>
         </answers>
     </problem>
+
+    <problem id="t1">
+        <question>
+            <text>What are all integers $k$ for which $x^2 + kx + k + 17 = 0$ has integral roots?</text>
+        </question>
+    </problem>
+
+    <problem>
+        <question>
+
+            <image display="right">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <clipPath id="cut-off-bottom">
+                            <rect x="0" y="0" width="200" height="100" />
+                        </clipPath>
+                        <clipPath id="cut-off-angle">
+                            <polygon points="0,0 0,100 160,0" />
+                        </clipPath>
+                    </defs>
+
+                    <circle cx="100" cy="100" r="100" stroke="black" fill="lightgrey"
+                        clip-path="url(#cut-off-bottom)" />
+                    <circle cx="100" cy="100" r="100" stroke="black" fill="white"
+                        clip-path="url(#cut-off-angle)" />
+                    <text x="35" y="95">30°</text>
+
+                    <line x1="0" y1="100" x2="200" y2="100" stroke="black" />
+                    <line x1="0" y1="100" x2="142" y2="10" stroke="black" />
+                    <circle cx="100" cy="100" r="2" />
+                    <text x="50" y="115">3</text>
+                    <text x="150" y="115">3</text>
+
+                </svg>
+            </image>
+            <text>In the diagram, one side of a 30° inscribed angle is the diameter of a semicircle
+                of radius 3. What is the perimeter of the shaded region bounded by the inscribed
+                angle and its intercepted arc?</text>
+        </question>
+    </problem>
+    <problem>
+        <question>
+            <text>Together, Al, Barb, Cal, Di, and Ed earned a total of $150, but in unequal
+                amounts. In order to equalize their earnings exactly, Barb gave half of her earnings
+                to Al. Next, Cal gave one-third of his earnings to Barb. Then, Di gave one-fourth of
+                her earnings to Cal. Finally, Ed gave one-sixth of his earnings to Di. How many
+                dollars did Al earn before equalization?</text>
+        </question>
+    </problem>
+    <problem>
+        <question>
+            <text>A wall clock loses 2 minutes in an hour. A table clock gets 2 minutes ahead of the
+                wall clock in an hour. An alarm clock falls 2 minutes behind the table clock in an
+                hour. A wristwatch gets 2 minutes ahead of the alarm clock in an hour. At noon, all
+                four timepieces were set correctly. To the nearest minute, what time will the
+                wristwatch show when the correct time is 7:00 p.m.?</text>
+        </question>
+    </problem>
+    <problem>
+        <question>
+            <text>Find all ordered pairs of the real numbers $(x, y)$ that satisfy
+                $x+y+\sqrt{(x+y)}=56$ and $x-y+\sqrt{(x-y)}=30$.</text>
+        </question>
+    </problem>
+
 
 </test>
