@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>How long does it take?</title>
+  </head>
+  <body>
+    <h1>How long does it take?</h1>
+    <form id="timecalc" action="#">
+      <label for="start">Start (hour:min):</label>
+      <input type="time" name="start" id="start" required />
+      <br />
+      <label for="speed">End (hour:min):</label>
+      <input type="time" name="end" id="end" required />
+      <br />
+      <button type="submit">Calculate</button>
+    </form>
+    <p>It takes <span id="time">TBD</span>.</p>
+    <script>
+      document
+        .getElementById("timecalc")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          const start = document.getElementById("start").value;
+          const end = document.getElementById("end").value;
+          const startMinutes =
+            parseInt(start.split(":")[0]) * 60 + parseInt(start.split(":")[1]);
+          const endMinutes =
+            parseInt(end.split(":")[0]) * 60 + parseInt(end.split(":")[1]);
+          const minutes = endMinutes - startMinutes;
+          const time = Math.floor(minutes / 60) + ":" + (minutes % 60);
+          document.getElementById("time").textContent = time;
+        });
+    </script>
+  </body>
+</html>
