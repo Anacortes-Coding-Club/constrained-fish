@@ -30,6 +30,15 @@
       <h2>NWML December 12, 2018</h2>
     </div>
 
+    <div>
+      Dec 12, 2018:
+      <a href="nwml.html?xml=20181212-individual.xml">individual</a>,
+      <a href="nwml.html?xml=20181212-team.xml">team</a>
+
+      | Jan 17, 2018:
+      <a href="nwml.html?xml=20180117-individual.xml">individual</a>
+    </div>
+
     <script>
       MathJax = {
         tex: {
@@ -60,7 +69,7 @@
               const question = document.createElement("p");
               question.textContent = questionPart.textContent;
               // Replace $...$ with \( ... \)
-              const latexPattern = /\$([^$]+)\$/g;
+              const latexPattern = /\$([^$]*[^\s$])\$/g;
               question.textContent = question.textContent.replace(
                 latexPattern,
                 "\\( $1 \\)"
@@ -80,7 +89,7 @@
             const answer = document.createElement("span");
             const letter = String.fromCharCode(65 + j); // Generate letter (A, B, C, etc.)
             // Replace $...$ with \( ... \)
-            const latexPattern = /\$([^$]+)\$/g;
+            const latexPattern = /\$([^$]*[^\s$])\$/g;
             const answerDisplay = answerElement.textContent.replace(
               latexPattern,
               "\\( $1 \\)"
@@ -93,14 +102,53 @@
         return problemList;
       }
 
-      fetch("20181212.xml")
+      function getTitle(doc) {
+        // <test date="2018-12-12" host="Anacortes High School" contest="individual">
+
+        const date = new Date(doc.documentElement.getAttribute("date"));
+        // https://www.youtube.com/watch?v=oKFb2Us9kmg
+        date.setMinutes(date.getMinutes() + date.getTimezoneOffset());
+        const options = {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+          timeZone: "America/Los_Angeles",
+        };
+        const formattedDate = date.toLocaleDateString("en-US", options);
+
+        console.log(`Formatted Date: ${formattedDate}`);
+
+        const host = doc.documentElement.getAttribute("host");
+        const contest = doc.documentElement.getAttribute("contest");
+
+        const title = document.createElement("h2");
+        // capitalize first letter of contest
+        let contestDisp = contest.charAt(0).toUpperCase() + contest.slice(1);
+        title.textContent = `${contestDisp} Contest, ${formattedDate} at ${host}`;
+        return title;
+      }
+
+      let xmlFile = "20180117-individual.xml";
+      // get XML file from query string
+      if (window.location.search) {
+        const queryXml = new URLSearchParams(window.location.search).get("xml");
+        if (queryXml) {
+          xmlFile = queryXml;
+        }
+        console.log(`XML File: ${xmlFile}`);
+      }
+
+      fetch(xmlFile)
         .then((response) => response.text())
         .then((text) => {
           const parser = new DOMParser();
           const doc = parser.parseFromString(text, "text/xml");
           console.log(doc.documentElement.nodeName);
+          const destination = document.getElementById("goeshere");
+          destination.innerHTML = "";
+          destination.appendChild(getTitle(doc));
           const problemList = getProblems(doc);
-          document.getElementById("goeshere").appendChild(problemList);
+          destination.appendChild(problemList);
 
           MathJax.typeset();
         });
