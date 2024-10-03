@@ -5,6 +5,19 @@
         <question id="1">
             <text>What are all integers $k$ for which $x^2 + kx + k + 17 = 0$ has integral roots?</text>
         </question>
+        <solution>
+            <text>
+                answer #1
+                $k(x+1) = -x^2-17$
+                $$k = \frac{-x^2-17}{x+1}$$
+                $(x+1)(-x+1) = -x^2+1$
+                $$k = \frac{(x+1)(-x+1) -1-17}{x+1}$$
+                $$k = 1-x-\frac{18}{x+1}$$
+                So x+1 must cleanly divide 18, $x+1 = \pm1,2,3,6,9,18 \implies x = 0, 1, \pm2, -3,
+                -4, 5, -7, 8, -10 ,17 ,-19$
+                Solve for k. $k=-17, -9, -7, 11, 13, 21$
+            </text>
+        </solution>
     </problem>
 
     <problem>
@@ -32,13 +45,25 @@
                     <circle cx="100" cy="100" r="2" />
                     <text x="50" y="115">3</text>
                     <text x="150" y="115">3</text>
-
                 </svg>
             </image>
             <text>In the diagram, one side of a 30° inscribed angle is the diameter of a semicircle
                 of radius 3. What is the perimeter of the shaded region bounded by the inscribed
                 angle and its intercepted arc?</text>
         </question>
+        <answer>
+            $6 + 3\sqrt{3} + \pi$
+        </answer>
+        <solution>
+            <text>Inscribed angle is half of intercepted arc (central angle)
+                so the arc is 60 degrees, and the arc length is 60/360 x circumference, or pi.
+                next, draw the chord for the arc, and we have a right triangle.
+                cos x = adj/hyp: $\cos(30)$ is $\dfrac{\sqrt{3}}{2}$, so side is $3\sqrt{3}$
+            </text>
+            <text>
+                Perimeter is base + hypotenuse + arc, or $6+3\sqrt{3}+\pi$
+            </text>
+        </solution>
     </problem>
     <problem>
         <question id="3">
@@ -48,6 +73,14 @@
                 her earnings to Cal. Finally, Ed gave one-sixth of his earnings to Di. How many
                 dollars did Al earn before equalization?</text>
         </question>
+        <solution>
+            <text>$150/5 = 30
+                ed - 1/6 ed = 30; ed had $36
+                di - 1/4di + 1/6ed = 30; di had $32
+                cal - 1/3 cal + 1/4 di = 30; cal had $33
+                barb - 1/2 barb + 1/3 cal = 30; barb had $38
+                150-36-32-33-38; al had $11</text>
+        </solution>
     </problem>
     <problem>
         <question id="4">
@@ -57,12 +90,37 @@
                 four timepieces were set correctly. To the nearest minute, what time will the
                 wristwatch show when the correct time is 7:00 p.m.?</text>
         </question>
+        <solution>
+            <text>in 1 hour, wall clock ticks 58min (60 minutes IRL)
+                when the wall clock shows 60 minutes, the table clock shows 62 minutes.
+                then in 58 wall-clock minutes, the table clock ticks 58 x 62/60 = 60.0667 minutes.
+                when the table clock shows 60 minutes, alarm clock shows 58.
+                so in $58 \times 62/60 \times 58/60 = 57.93\overline{5}$ minutes
+                one more, $58 \times \frac{62}{60} \times \frac{58}{60} \times \frac{62}{60} =
+                59.866\overline{741}$ minutes
+                so we lose .133 minutes per hour.</text>
+        </solution>
     </problem>
     <problem>
         <question id="5">
             <text>Find all ordered pairs of the real numbers $(x, y)$ that satisfy
                 $x+y+\sqrt{(x+y)}=56$ and $x-y+\sqrt{(x-y)}=30$.</text>
         </question>
+        <solution>
+            <text>
+                Let $a = \sqrt{x+y}$ and $b = \sqrt{x-y}$. Then the equations become $a^2+a = 56$
+                and
+                $b^s+b=30$ which we can factor to be $(a+8)(a-7) = 0$ and $(b+6)(b-5) = 0$. So,
+                a=-8, 7
+                and b=-6, 5. But since a and b are square roots, they are positive, so $\sqrt{(x+y)}
+                =
+                7$ and $\sqrt{(x-y)} = 5$. Square both sides, and $x+y = 49$ and $x-y = 25$.
+                x = y+25
+                $x+x-25 = 49 \implies
+                x = 37, y=12$.
+
+            </text>
+        </solution>
     </problem>
 
 </test>

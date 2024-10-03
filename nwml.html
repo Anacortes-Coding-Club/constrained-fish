@@ -23,6 +23,10 @@
       svg {
         display: inline-block; /* Allow SVG to respect width and height */
       }
+
+      .solution {
+        display: none;
+      }
     </style>
   </head>
   <body>
@@ -82,22 +86,74 @@
             }
           }
           const answerDiv = document.createElement("div");
-          const answerElements = problem.getElementsByTagName("answer");
-          for (var j = 0; j < answerElements.length; j++) {
-            var answerElement = answerElements[j];
+          // get the "answers" tag if it exists
+          const answers = problem.getElementsByTagName("answers");
+          if (answers.length > 0) {
+            const answerElements = answers[0].getElementsByTagName("answer");
+            for (var j = 0; j < answerElements.length; j++) {
+              var answerElement = answerElements[j];
 
-            const answer = document.createElement("span");
-            const letter = String.fromCharCode(65 + j); // Generate letter (A, B, C, etc.)
-            // Replace $...$ with \( ... \)
-            const latexPattern = /\$([^$]*[^\s$])\$/g;
-            const answerDisplay = answerElement.textContent.replace(
-              latexPattern,
-              "\\( $1 \\)"
-            );
-            answer.innerHTML = `(${letter}) ${answerDisplay} &emsp;`;
-            answerDiv.appendChild(answer);
+              const answer = document.createElement("span");
+              const letter = String.fromCharCode(65 + j); // Generate letter (A, B, C, etc.)
+              // Replace $...$ with \( ... \)
+              const latexPattern = /\$([^$]*[^\s$])\$/g;
+              const answerDisplay = answerElement.textContent.replace(
+                latexPattern,
+                "\\( $1 \\)"
+              );
+              answer.innerHTML = `(${letter}) ${answerDisplay} &emsp;`;
+              answerDiv.appendChild(answer);
+            }
           }
           problemElement.appendChild(answerDiv);
+          // get the "solution" tag if it exists
+          const button = document.createElement("button");
+          button.textContent = "Solution";
+          button.onclick = function () {
+            const solution =
+              problemElement.getElementsByClassName("solution")[0];
+            if (!solution.style.display || solution.style.display === "none") {
+              solution.style.display = "block";
+            } else {
+              solution.style.display = "none";
+            }
+          };
+
+          const solutions = problem.getElementsByTagName("solution");
+          if (solutions.length > 0) {
+            problemElement.appendChild(button);
+            const solution = document.createElement("div");
+            solution.setAttribute("class", "solution");
+            //const heading = document.createElement("h4");
+            //heading.innerText = "Solution";
+            //solution.appendChild(heading);
+            const solutionParts = solutions[0].childNodes;
+            for (let i = 0; i < solutionParts.length; i++) {
+              const solutionPart = solutionParts[i];
+              if (solutionPart.tagName === "text") {
+                const solutionText = document.createElement("p");
+                solutionText.textContent = solutionPart.textContent;
+                // Replace $$...$$ with \[ ... \]
+                const blockPattern = /\$\$([^$]*[^\s$])\$\$/g;
+                solutionText.textContent = solutionText.textContent.replace(
+                  blockPattern,
+                  "\\[ $1 \\]"
+                );
+                // Replace $...$ with \( ... \)
+                const latexPattern = /\$([^$]*[^\s$])\$/g;
+                solutionText.textContent = solutionText.textContent.replace(
+                  latexPattern,
+                  "\\( $1 \\)"
+                );
+                solution.appendChild(solutionText);
+              } else if (solutionPart.tagName === "image") {
+                const image = solutionPart.getElementsByTagName("svg")[0];
+                image.setAttribute("class", "image");
+                solution.appendChild(image);
+              }
+            }
+            problemElement.appendChild(solution);
+          }
         }
         return problemList;
       }
@@ -115,8 +171,6 @@
           timeZone: "America/Los_Angeles",
         };
         const formattedDate = date.toLocaleDateString("en-US", options);
-
-        console.log(`Formatted Date: ${formattedDate}`);
 
         const host = doc.documentElement.getAttribute("host");
         const contest = doc.documentElement.getAttribute("contest");
