@@ -75,7 +75,10 @@
             if (questionPart.tagName === "text") {
               const question = document.createElement("p");
               question.textContent = questionPart.textContent;
-              question.innerHTML = question.textContent.replace(/\n/g, "<br>");
+              question.innerHTML = question.textContent.replace(
+                /\n{2}/g,
+                "<br>"
+              );
               // Replace $$...$$ with \[ ... \]
               const blockPattern = /\$\$([^$]*[^\s$])\$\$/g;
               question.innerHTML = question.innerHTML.replace(
@@ -144,7 +147,7 @@
                 const solutionText = document.createElement("p");
                 // add line breaks
                 solutionText.innerHTML = solutionPart.textContent.replace(
-                  /\n/g,
+                  /\n{2}/g,
                   "<br>"
                 );
                 // Replace $$...$$ with \[ ... \]

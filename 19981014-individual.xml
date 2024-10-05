@@ -15,7 +15,9 @@
         <solution>
             <text>base change: $\log_{\sqrt{3}} \sqrt[3]{9} = \dfrac{\log_3 \sqrt[3]{9}}{ \log_3
                 \sqrt{3}}$
+
                 rewrite exponents: = $\dfrac{log_3 3^{2/3}}{log_3 3^{1/2}}$
+
                 de-log: =$\dfrac{2/3}{1/2} = \dfrac{4}{3}$
             </text>
         </solution>
@@ -46,9 +48,13 @@
         </question>
         <solution>
             <text>y = x+2
+
                 x/3+2y = x+y+7
+
                 x/3+2(x+2) = 2x+9
+
                 x/3+4 = 9
+
                 x = 15</text>
         </solution>
     </problem>
@@ -57,7 +63,9 @@
             <text>How many multiples of 7 are there between 100 and 200?</text>
         </question>
         <solution>
-            <text>7x14 = 98, 7x28 = 196, = 14 (15-28, inclusive)</text>
+            <text>7x14 = 98, 7x28 = 196,
+
+                = 14 (15-28, inclusive)</text>
         </solution>
     </problem>
     <problem>
@@ -66,9 +74,11 @@
         </question>
         <solution>
             <text>$x^2+bx+c = 0$ and $x = 3+\sqrt{2}$
+
                 if we have roots $r_1, r_2$, $b=-(r_1+r_2)$ and $c=r_1 \cdot r_2$
                 to have real roots, the other root must be the conjugate, $3-\sqrt{2}$
                 $b=-(3+\sqrt{2}+3-\sqrt{2}) = -6$
+
                 $a = (3+\sqrt{2})(3-\sqrt{2}) = 9-2 = 7$
             </text>
         </solution>
@@ -79,9 +89,13 @@
         </question>
         <solution>
             <text>$1+2^n+2^{2n} = 73$
+
                 $2^n+2^{2n} = 72$
+
                 $2^n(1+2^n) = 72$ ?
+
                 let $x = 2^n$. now $x^2+x-72=0$ which factors to (-9,8)
+
                 only $2^n=8$ is real, so $n=3$.
             </text>
         </solution>
@@ -92,9 +106,13 @@
         </question>
         <solution>
             <text>$4.\overline{263}$
+
                 let x be the repeating decimal part.
+
                 then $1000x = 263 + x$
+
                 $x = 263/999$
+
                 add back the 4, = $\dfrac{4259}{999}$</text>
         </solution>
     </problem>
@@ -104,7 +122,9 @@
         </question>
         <solution>
             <text>maximum area is a circle.
+
                 circumference $\pi d = 12$ so r = $6/\pi$.
+
                 area is $\pi (\frac{6}{\pi})^2 = \frac{36}{\pi}$</text>
         </solution>
     </problem>
