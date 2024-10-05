@@ -35,7 +35,10 @@
     </div>
 
     <div>
-      Dec 12, 2018:
+      Oct 14, 1998:
+      <a href="nwml.html?xml=19981014-individual.xml">individual</a>,
+      <a href="nwml.html?xml=19981014-team.xml">team</a>
+      | Dec 12, 2018:
       <a href="nwml.html?xml=20181212-individual.xml">individual</a>,
       <a href="nwml.html?xml=20181212-team.xml">team</a>
 
@@ -72,9 +75,16 @@
             if (questionPart.tagName === "text") {
               const question = document.createElement("p");
               question.textContent = questionPart.textContent;
+              question.innerHTML = question.textContent.replace(/\n/g, "<br>");
+              // Replace $$...$$ with \[ ... \]
+              const blockPattern = /\$\$([^$]*[^\s$])\$\$/g;
+              question.innerHTML = question.innerHTML.replace(
+                blockPattern,
+                "\\[ $1 \\]"
+              );
               // Replace $...$ with \( ... \)
               const latexPattern = /\$([^$]*[^\s$])\$/g;
-              question.textContent = question.textContent.replace(
+              question.innerHTML = question.innerHTML.replace(
                 latexPattern,
                 "\\( $1 \\)"
               );
@@ -132,16 +142,20 @@
               const solutionPart = solutionParts[i];
               if (solutionPart.tagName === "text") {
                 const solutionText = document.createElement("p");
-                solutionText.textContent = solutionPart.textContent;
+                // add line breaks
+                solutionText.innerHTML = solutionPart.textContent.replace(
+                  /\n/g,
+                  "<br>"
+                );
                 // Replace $$...$$ with \[ ... \]
                 const blockPattern = /\$\$([^$]*[^\s$])\$\$/g;
-                solutionText.textContent = solutionText.textContent.replace(
+                solutionText.innerHTML = solutionText.innerHTML.replace(
                   blockPattern,
                   "\\[ $1 \\]"
                 );
                 // Replace $...$ with \( ... \)
                 const latexPattern = /\$([^$]*[^\s$])\$/g;
-                solutionText.textContent = solutionText.textContent.replace(
+                solutionText.innerHTML = solutionText.innerHTML.replace(
                   latexPattern,
                   "\\( $1 \\)"
                 );

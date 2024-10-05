@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test date="1998-10-14" host="Sehome High School" contest="individual">
+    <problem>
+        <question id="1">
+            <text>Express $$2 + \sqrt{2} + \frac{1}{2+\sqrt{2}}+ \frac{1}{\sqrt{2}-2}$$
+                in simplest form.</text>
+        </question>
+        <solution>
+            <text>
+                $$2+\sqrt{2} + \frac{1}{2 + \sqrt{2}} \cdot \frac{2-\sqrt{2}}{2-\sqrt{2}} +
+                \frac{1}{-2+\sqrt{2}} \cdot \frac{-2-\sqrt{2}}{-2-\sqrt{2}}$$
+                $$\frac{4}{2} + \frac{2\sqrt{2}}{2} + \frac{2-\sqrt{2}}{2} + \frac{-2-\sqrt{2}}{2}$$
+                $$\frac{4 + 2\sqrt{2} + 2 - \sqrt{2} - 2 - \sqrt{2}}{2}$$
+                $$\dfrac{4}{2} = 2$$
+            </text>
+        </solution>
+    </problem>
+    <problem>
+        <question id="2">
+            <text>At a dance party, a group of boys and girls exchange dances as follows. one boy
+                dances with 5 girls, a second boy dances with 6 girls, and so on, the last boy
+                dancing with all the girls. If $b$ represents the number of boys and $g$ the number
+                of girls, then find $b$ in terms of $g$.</text>
+        </question>
+        <solution>
+            <text>boy $b$ dances with $b+4$ girls, so $b = g-4$</text>
+        </solution>
+    </problem>
+    <problem>
+        <question id="3">
+            <text>Find the units digit of $7^{42}+42^7$.</text>
+        </question>
+        <solution>
+            <text>$7^{42} = 7^{40} \cdot 7^2 = (7^4)^{10}$
+                $7^1=7$
+                $7^2=49$
+                $7^3=343$
+                $7^4=2401$
+                cycle repeats. 42 mod 4 is 2, so $7^{42}$ contributes 9.
+                Next, $42^7 = 40^7 \cdot 2^7$. The powers of 40 do not contribute to the units
+                digit, and $2^7=128$ so $42^7$ contributes 8.
+                $9+8 = 17$, giving the answer 7.</text>
+        </solution>
+    </problem>
+    <problem>
+        <question id="4">
+            <text>Find all $y$ such that $$1+\frac{y+3}{y-2} = \frac{3y-3}{6-y}$$</text>
+        </question>
+        <solution>
+            <text>
+                $1+\frac{y+3}{y-2} = \frac{3y-3}{6-y}$
+                $\frac{y-2}{y-2}+\frac{y+3}{y-2} = \frac{3y-3}{6-y}$
+                $\frac{2y+1}{y-2} = \frac{3y-3}{6-y} = 3\frac{y-3}{6-y}$
+                $(6-y)(2y+1) = 3(y-2)(y-1)$
+                $-2y^2+11y+6 = 3y^2-9y+6$
+                $-5y^2+20y = 0$
+                $-5y(y-4) = 0$
+                roots are 4, 0.</text>
+        </solution>
+    </problem>
+    <problem>
+        <question id="5">
+            <image align="right">
+                <svg xmlns="http://www.w3.org/2000/svg" width="200" height="150">
+                    <polygon points="0,150 200,150 100,0" fill="lightgrey" stroke="black" />
+                    <polygon points="150,75 50,75 100,150" fill="white" stroke="black" />
+                    <polygon points="100,76 123,114 77,114" fill="lightgrey" stroke="black" />
+                </svg>
+
+            </image>
+            <text>Points D, E, and F are midpoints of the sides of equilateral triangle ABC. The
+                shaded central triangle is formed by connecting the midpoints of the sides of
+                triangle DEF. What fraction of the total area of ABC is shaded?</text>
+        </question>
+        <solution>
+            <text>Each larger triangle is $\frac{1}{4}$, and smaller triangles are $\frac{1}{4}
+                \cdot
+                \frac{1}{4}$.
+                $\frac{3}{4} + \frac{1}{16} = \frac{13}{16}$</text>
+        </solution>
+    </problem>
+</test>    
