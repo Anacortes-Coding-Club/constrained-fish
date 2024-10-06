@@ -76,10 +76,12 @@
             <text>$x^2+bx+c = 0$ and $x = 3+\sqrt{2}$
 
                 if we have roots $r_1, r_2$, $b=-(r_1+r_2)$ and $c=r_1 \cdot r_2$
-                to have real roots, the other root must be the conjugate, $3-\sqrt{2}$
-                $b=-(3+\sqrt{2}+3-\sqrt{2}) = -6$
 
-                $a = (3+\sqrt{2})(3-\sqrt{2}) = 9-2 = 7$
+                to have real roots, the other root must be the conjugate, $3-\sqrt{2}$
+
+                $b = -(3+\sqrt{2}+3-\sqrt{2}) = -6$
+
+                $c = (3+\sqrt{2})(3-\sqrt{2}) = 9-2 = 7$
             </text>
         </solution>
     </problem>
