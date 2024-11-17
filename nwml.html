@@ -10,67 +10,6 @@
       async
       src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
     ></script>
-    <style>
-      .container {
-        overflow: hidden; /* Clear the float */
-      }
-
-      .image {
-        float: right;
-        martin-top: 10px;
-        margin-left: 20px; /* Add some space between text and image */
-      }
-
-      svg {
-        display: inline-block; /* Allow SVG to respect width and height */
-      }
-
-      .solution {
-        display: none;
-      }
-
-      .solution table {
-        border-collapse: collapse;
-      }
-      .solution th,
-      .solution td {
-        border: 1px solid black;
-        padding: 4px;
-      }
-      .solution td {
-        text-align: right;
-      }
-
-      .no-print {
-        display: block;
-      }
-      @media print {
-        li {
-          break-inside: avoid;
-        }
-        .no-print {
-          display: none;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <div id="goeshere">
-      <h2>NWML December 12, 2018</h2>
-    </div>
-
-    <div class="no-print">
-      Oct 14, 1998:
-      <a href="nwml.html?xml=19981014-individual.xml">individual</a>,
-      <a href="nwml.html?xml=19981014-team.xml">team</a>
-      | Dec 12, 2018:
-      <a href="nwml.html?xml=20181212-individual.xml">individual</a>,
-      <a href="nwml.html?xml=20181212-team.xml">team</a>
-
-      | Jan 17, 2018:
-      <a href="nwml.html?xml=20180117-individual.xml">individual</a>
-    </div>
-
     <script>
       MathJax = {
         tex: {
@@ -253,7 +192,25 @@
         return title;
       }
 
-      let xmlFile = "20180117-individual.xml";
+      function loadContest(xmlFile) {
+        fetch(xmlFile)
+          .then((response) => response.text())
+          .then((text) => {
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(text, "text/xml");
+
+            const destination = document.getElementById("goeshere");
+            destination.innerHTML = "";
+            destination.appendChild(getTitle(doc));
+            const problemList = getProblems(doc);
+            destination.appendChild(problemList);
+
+            MathJax.typeset();
+            document.getElementById("contest-select").value = xmlFile;
+          });
+      }
+
+      let xmlFile = "20241211-individual.xml";
       // get XML file from query string
       if (window.location.search) {
         const queryXml = new URLSearchParams(window.location.search).get("xml");
@@ -263,20 +220,70 @@
         console.log(`XML File: ${xmlFile}`);
       }
 
-      fetch(xmlFile)
-        .then((response) => response.text())
-        .then((text) => {
-          const parser = new DOMParser();
-          const doc = parser.parseFromString(text, "text/xml");
-          console.log(doc.documentElement.nodeName);
-          const destination = document.getElementById("goeshere");
-          destination.innerHTML = "";
-          destination.appendChild(getTitle(doc));
-          const problemList = getProblems(doc);
-          destination.appendChild(problemList);
-
-          MathJax.typeset();
-        });
+      loadContest(xmlFile);
     </script>
+    <style>
+      .container {
+        overflow: hidden; /* Clear the float */
+      }
+
+      .image {
+        float: right;
+        martin-top: 10px;
+        margin-left: 20px; /* Add some space between text and image */
+      }
+
+      svg {
+        display: inline-block; /* Allow SVG to respect width and height */
+      }
+
+      .solution {
+        display: none;
+      }
+
+      .solution table {
+        border-collapse: collapse;
+      }
+      .solution th,
+      .solution td {
+        border: 1px solid black;
+        padding: 4px;
+      }
+      .solution td {
+        text-align: right;
+      }
+
+      .no-print {
+        display: block;
+      }
+      @media print {
+        li {
+          break-inside: avoid;
+        }
+        .no-print {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="no-print">
+      Select Contest:
+      <select id="contest-select" onChange="loadContest(this.value)">
+        <option value="20241211-individual.xml">Individual</option>
+        <option value="20241211-team.xml">Team</option>
+      </select>
+      | Mark
+      <input
+        type="checkbox"
+        id="individual"
+        name="contest"
+        value="individual"
+      />
+      for Solutions
+    </div>
+    <div id="goeshere">
+      <h2>NWML Contest</h2>
+    </div>
   </body>
 </html>
