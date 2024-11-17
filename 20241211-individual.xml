@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test date="2024-12-11" host="Anacortes High School" contest="individual">
+
+    <problem>
+        <question id="1">
+            <image>
+                <svg xmlns="http://www.w3.org/2000/svg" class="image" width="180" height="130">
+                    <rect x="50" y="10" width="50" height="50" stroke="black" fill="none"></rect>
+                    <rect x="25" y="60" width="50" height="50" stroke="black" fill="none"></rect>
+                    <rect x="75" y="60" width="50" height="50" stroke="black" fill="none"></rect>
+                    <line x1="25" y1="110" x2="100" y2="10" stroke="black"></line>
+                    <text x="15" y="118" font-size="18" text-anchor="middle">A</text>
+                    <text x="110" y="16" font-size="18" text-anchor="middle">B</text>
+                </svg>
+            </image>
+            <text>Three congruent squares are drawn as shown,
+                in which the midpoints of two sides of the bottom squares are vertices of the top
+                square.
+                If $AB = 100$, what is the area of one of these squares?</text>
+        </question>
+        <answers>
+            <answer>800</answer>
+            <answer>1000</answer>
+            <answer>1200</answer>
+            <answer>1600</answer>
+            <answer>None</answer>
+        </answers>
+    </problem>
+
+    <!-- <problem>
+        <question id="2">
+            <text>When $x = 10$, the expression $\sqrt{1+2+3+x}$ has the value 4.
+                What are all four integers $x \lt 10$ for which $\sqrt{1+2+3+x}$ has an integral
+                value?</text>
+        </question>
+        <answers>
+            <answer>3, 5, 6, 9</answer>
+            <answer>0, 3, 6, 8</answer>
+            <answer>1, 3, 5, 9</answer>
+            <answer>1, 3, 5, 8</answer>
+            <answer>None</answer>
+        </answers>
+    </problem> -->
+
+    <problem>
+        <question id="3">
+            <image align="right">
+                <svg xmlns="http://www.w3.org/2000/svg" width="200" height="100" fill="white">
+                    <polygon points="5,50 50,10 50,90" stroke="black" fill="lightgray" />
+                    <polygon points="50,10 150,50 50,90" stroke="black" fill="none" />
+                    <line x1="5" y1="50" x2="150" y2="50" stroke="black" />
+                    <text x="35" y="45" font-size="16" fill="black" font-style="italic"
+                        text-anchor="middle">
+                        x</text>
+                    <text x="75" y="45" font-size="16" fill="black" text-anchor="middle">
+                        6 -</text>
+                    <text x="95" y="45" font-size="16" fill="black" font-style="italic"
+                        text-anchor="middle">
+                        x</text>
+                </svg>
+            </image>
+            <text>A quadrilateral has two pairs of congruent sides and a longer diagonal of length
+                6, as shown. For what value of $x$ will the area of the shaded region be 40% of the
+                area of the unshaded region?</text>
+        </question>
+        <answers>
+            <answer>$\dfrac{3}{2}$</answer>
+            <answer>$\dfrac{6}{5}$</answer>
+            <answer>$\dfrac{12}{7}$</answer>
+            <answer>$\dfrac{9}{5}$</answer>
+            <answer>None</answer>
+        </answers>
+    </problem>
+
+    <problem>
+        <question id="4">
+            <image src="seesaw.png" />
+            <text>In this problem, use the facts that 1 ton = 2000 lbs. and 1 mile = 5280 feet.
+                An elephant weighing 2.64 tons and a rabbit weighing 1 lb. are on
+                a very long, perfectly rigid teeter-totter board (seesaw).
+                If the elephant starts sliding toward the fulcrum
+                at the uniform rate of 1 foot per minute,
+                how many miles per hour must the rabbit run in order to maintain balance?</text>
+
+        </question>
+        <answers>
+            <answer>30 mph</answer>
+            <answer>60 mph</answer>
+            <answer>90 mph</answer>
+            <answer>120 mph</answer>
+            <answer>None</answer>
+        </answers>
+    </problem>
+
+    <problem>
+        <question id="5">
+            <text>What is the smallest positive integer which uses
+                only the digits 0 and 1 and is divisible by 225?</text>
+        </question>
+        <answers>
+            <answer>1000</answer>
+            <answer>11100</answer>
+            <answer>1001100</answer>
+            <answer>1111010</answer>
+            <answer>None</answer>
+        </answers>
+    </problem>
+
+    <problem>
+        <question id="6">
+            <image>
+                <svg xmlns="http://www.w3.org/2000/svg" class="image" width="201" height="110">
+                    <defs>
+                        <clipPath id="cut-off-bottom">
+                            <rect x="0" y="0" width="200" height="100"></rect>
+                        </clipPath>
+                    </defs>
+                    <circle cx="100" cy="100" r="100" stroke="black" fill="white"
+                        clip-path="url(#cut-off-bottom)"></circle>
+                    <rect x="55" y="10" width="90" height="90" stroke="black" fill="white"></rect>
+                    <rect x="145" y="55" width="45" height="45" stroke="black" fill="none"></rect>
+                    <line x1="0" y1="100" x2="200" y2="100" stroke="black"></line>
+                    <circle cx="100" cy="100" r="2"></circle>
+                </svg>
+            </image>
+            <text>Two squares are inscribed in a semicircle as shown.
+                If the area of the smaller square is 25,
+                what is the area of the larger square?</text>
+        </question>
+        <answers>
+            <answer>50</answer>
+            <answer>75</answer>
+            <answer>100</answer>
+            <answer>125</answer>
+            <answer>None</answer>
+        </answers>
+    </problem>
+
+    <problem>
+        <question id="7">
+            <text>A sequence is geometric if the ratio of each term to its preceding term always
+                has the same value. In a geometric sequence, if the sum of the first 3 terms is 3
+                and the sum of the first 6 terms is 4, what is the sum of the first 12 terms?</text>
+        </question>
+        <answers>
+            <answer>$\dfrac{40}{9}$</answer>
+            <answer>$\dfrac{9}{2}$</answer>
+            <answer>5</answer>
+            <answer>6</answer>
+            <answer>None</answer>
+        </answers>
+    </problem>
+
+    <problem>
+        <question id="8">
+            <text>At math contest, each student ate at least 1 chocolate.
+                If each student ate a whole number of chocolates,
+                no three students ate the same number of chocolates,
+                and the students ate at most 2600 chocolates all together,
+                then at most how many students were at the contest?</text>
+        </question>
+        <answers>
+            <answer>50</answer>
+            <answer>60</answer>
+            <answer>80</answer>
+            <answer>100</answer>
+            <answer>None</answer>
+        </answers>
+    </problem>
+
+    <problem>
+        <question id="9">
+            <image>
+                <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200">
+                    <polyline
+                        points="20,180 20,20 164,20 164,148 52,148 52,52 132,52 132,116 84,116 84,84 100,84"
+                        stroke="black"
+                        fill="none" />
+                    <style>
+                        .text-label {
+                        font-size: 18px;
+                        font-family: Arial, sans-serif;
+                        fill: black;
+                        text-anchor: middle;
+                        }
+                    </style>
+                    <text x="10" y="190" class="text-label">A</text>
+                    <text x="10" y="20" class="text-label">B</text>
+                    <text x="175" y="20" class="text-label">C</text>
+                    <text x="175" y="160" class="text-label">D</text>
+                    <text x="40" y="160" class="text-label">E</text>
+                    <text x="40" y="50" class="text-label">F</text>
+                    <text x="140" y="50" class="text-label">G</text>
+                    <text x="140" y="130" class="text-label">H</text>
+                    <text x="75" y="130" class="text-label">I</text>
+                    <text x="75" y="80" class="text-label">J</text>
+                    <text x="110" y="90" class="text-label">K</text>
+                </svg>
+            </image>
+            <text>In the set of perpendicular segments shown in the diagram, $AB = 10$
+                and every other segment is 1 unit shorter than the previous one
+                (so $BC = 9$, $CD = 8$, $DE = 7$, etc.).
+                What is the square of the (straight-line) distance from A to K?</text>
+        </question>
+        <answers>
+            <answer>49</answer>
+            <answer>50</answer>
+            <answer>61</answer>
+            <answer>85</answer>
+            <answer>None</answer>
+        </answers>
+    </problem>
+
+    <problem>
+        <question id="10">
+            <text>If $3^a = 9^b = 27^c$, what is the value of
+                $\dfrac{a}{b} + \dfrac{b}{c} + \dfrac{c}{a}$?</text>
+        </question>
+        <answers>
+            <answer>$\dfrac{11}{3}$</answer>
+            <answer>$\dfrac{23}{6}$</answer>
+            <answer>$\dfrac{873}{243}$</answer>
+            <answer>3</answer>
+            <answer>None</answer>
+        </answers>
+    </problem>
+
+    <problem>
+        <question id="11">
+            <text>There are two real values of $r$ for which
+                $$x^4 - x^3 - 18x^2 + 52x + k$$
+                has a root of the form $x - r$. One of these values is $r = 2$.
+                What is the other value of $r$?</text>
+        </question>
+        <answers>
+            <answer>3</answer>
+            <answer>-4</answer>
+            <answer>5</answer>
+            <answer>-6</answer>
+            <answer>None</answer>
+        </answers>
+    </problem>
+
+
+</test>

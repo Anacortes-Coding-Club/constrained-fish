@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test date="2024-12-11" host="Anacortes High School" contest="team">
+
+    <problem>
+        <question id="1">
+            <text>What are all four integers $x \gt 0$ for which the
+                distance from $(x, 12)$ to the origin is an integer?</text>
+        </question>
+
+        <solution>
+            <text>5, 9, 16, 35.</text>
+            <text>
+                **Method I:** We are told there are four solutions. The Pythagorean triples (5, 12,
+                13), (9, 12, 15), (12, 16, 20), (12, 35, 37) give us the solutions 5, 9, 16, 35.
+            </text>
+            <text>
+                **Method II:** Let $y = \sqrt{12^2 + x^2}$ and use a calculator's table feature to
+                find integral $y$ when $x$ is integral.
+            </text>
+            <text>
+                **Method III:** Use another calculator feature to determine y values for various x.
+            </text>
+            <text>
+                **Method IV:** $12^2 + x^2 = c^2$ so $144 = (c + x)(c - x)$. Now, factor 144.
+                Finally, set the larger factor equal to $c+x$, the smaller factor equal to $c-x$ and
+                solve. (Find $2c$ by adding the equations.)</text>
+            <html>
+                <table class="table-grid">
+                    <tr>
+                        <th>$c+x$</th>
+                        <td>144</td>
+                        <td>72</td>
+                        <td> 48</td>
+                        <td> 36</td>
+                        <td> 24</td>
+                        <td> 18</td>
+                        <td> 16</td>
+                        <td> 12</td>
+                    </tr>
+                    <tr>
+                        <th> $c-x$</th>
+                        <td>1</td>
+                        <td>2</td>
+                        <td> 3</td>
+                        <td> 4</td>
+                        <td> 6</td>
+                        <td> 8</td>
+                        <td> 9</td>
+                        <td> 12</td>
+                    </tr>
+                    <tr>
+                        <th> $2c$</th>
+                        <td>145</td>
+                        <td>74</td>
+                        <td> 51</td>
+                        <td> 40</td>
+                        <td> 30</td>
+                        <td> 26</td>
+                        <td>25</td>
+                        <td> 24</td>
+                    </tr>
+                    <tr>
+                        <th> $c$</th>
+                        <td> </td>
+                        <td>37</td>
+                        <td> </td>
+                        <td> 20</td>
+                        <td> 15</td>
+                        <td> 13</td>
+                        <td> </td>
+                        <td>12</td>
+                    </tr>
+                    <tr>
+                        <th> $x$</th>
+                        <td> </td>
+                        <td>35</td>
+                        <td> </td>
+                        <td> 16</td>
+                        <td> 9</td>
+                        <td> 5</td>
+                        <td> </td>
+                        <td>0</td>
+                    </tr>
+                </table>
+            </html>
+        </solution>
+
+    </problem>
+
+
+    <problem>
+        <question id="4">
+            <image align="right">
+                <svg xmlns="http://www.w3.org/2000/svg" class="image" width="200" height="130">
+                    <style>
+                        .gridline {
+                        stroke: gray;
+                        stroke-dasharray: 2, 2;
+                        fill: none;
+                        }
+                        .shaded {
+                        stroke: black;
+                        fill: lightgray;
+                        }
+                    </style>
+                    <!-- axes -->
+                    <line x1="20" y1="120" x2="20" y2="20" stroke="black" stroke-width="2"
+                        fill="none"></line>
+                    <line x1="10" y1="110" x2="170" y2="110" stroke="black" stroke-width="2"
+                        fill="none"></line>
+                    <text x="180" y="115" font-size="18" font-style="italic" text-anchor="middle">x</text>
+                    <text x="15" y="15" font-size="18" font-style="italic" text-anchor="middle">y</text>
+
+                    <!-- horizontal gridlines -->
+                    <line x1="15" y1="90" x2="165" y2="90" class="gridline"></line>
+                    <line x1="15" y1="70" x2="165" y2="70" class="gridline"></line>
+                    <line x1="15" y1="50" x2="165" y2="50" class="gridline"></line>
+                    <line x1="15" y1="30" x2="165" y2="30" class="gridline"></line>
+
+                    <!-- vertical gridlines -->
+                    <line x1="40" y1="115" x2="40" y2="20" class="gridline"></line>
+                    <line x1="60" y1="115" x2="60" y2="20" class="gridline"></line>
+                    <line x1="80" y1="115" x2="80" y2="20" class="gridline"></line>
+                    <line x1="100" y1="115" x2="100" y2="20" class="gridline"></line>
+                    <line x1="120" y1="115" x2="120" y2="20" class="gridline"></line>
+                    <line x1="140" y1="115" x2="140" y2="20" class="gridline"></line>
+                    <line x1="160" y1="115" x2="160" y2="20" class="gridline"></line>
+
+                    <!-- shaded region -->
+                    <rect x="20" y="90" width="20" height="20" class="shaded"></rect>
+                    <rect x="40" y="90" width="20" height="20" class="shaded"></rect>
+                    <rect x="60" y="90" width="20" height="20" class="shaded"></rect>
+                    <rect x="80" y="90" width="20" height="20" class="shaded"></rect>
+                    <rect x="100" y="90" width="20" height="20" class="shaded"></rect>
+
+                    <rect x="40" y="70" width="20" height="20" class="shaded"></rect>
+                    <rect x="60" y="70" width="20" height="20" class="shaded"></rect>
+                    <rect x="80" y="70" width="20" height="20" class="shaded"></rect>
+
+                    <rect x="60" y="50" width="20" height="20" class="shaded"></rect>
+
+                </svg>
+            </image>
+            <text>In the grid shown, a group of 9 squares has been shaded.
+                There's only one line through the origin that divides this
+                shaded region into two regions of equal area.
+                What is the slope of this line?</text>
+        </question>
+        <solution>
+            <text>
+                $\dfrac{7}{16}$.</text>
+            <image>
+                <svg xmlns="http://www.w3.org/2000/svg" class="image" width="200" heigth="130">
+                    <style>
+                        .gridline {
+                        stroke: gray;
+                        stroke-dasharray: 2, 2;
+                        fill: none;
+                        }
+                        .shaded {
+                        stroke: black;
+                        fill: lightgray;
+                        }
+                    </style>
+                    <!-- axes -->
+                    <line x1="20" y1="105" x2="20" y2="10" stroke="black" stroke-width="2"
+                        fill="none"></line>
+                    <line x1="15" y1="100" x2="170" y2="100" stroke="black" stroke-width="2"
+                        fill="none"></line>
+
+
+                    <!-- horizontal gridlines -->
+                    <line x1="15" y1="80" x2="165" y2="80" class="gridline"></line>
+                    <line x1="15" y1="60" x2="165" y2="60" class="gridline"></line>
+                    <line x1="15" y1="40" x2="165" y2="40" class="gridline"></line>
+                    <line x1="15" y1="20" x2="165" y2="20" class="gridline"></line>
+
+                    <!-- vertical gridlines -->
+                    <line x1="40" y1="105" x2="40" y2="10" class="gridline"></line>
+                    <line x1="60" y1="105" x2="60" y2="10" class="gridline"></line>
+                    <line x1="80" y1="105" x2="80" y2="10" class="gridline"></line>
+                    <line x1="100" y1="105" x2="100" y2="10" class="gridline"></line>
+                    <line x1="120" y1="105" x2="120" y2="10" class="gridline"></line>
+                    <line x1="140" y1="105" x2="140" y2="10" class="gridline"></line>
+                    <line x1="160" y1="105" x2="160" y2="10" class="gridline"></line>
+
+                    <!-- shaded region -->
+                    <rect x="20" y="80" width="20" height="20" class="shaded"></rect>
+                    <rect x="40" y="80" width="20" height="20" class="shaded"></rect>
+                    <rect x="60" y="80" width="20" height="20" class="shaded"></rect>
+                    <rect x="80" y="80" width="20" height="20" class="shaded"></rect>
+                    <rect x="100" y="80" width="20" height="20" class="shaded"></rect>
+
+                    <rect x="40" y="60" width="20" height="20" class="shaded"></rect>
+                    <rect x="60" y="60" width="20" height="20" class="shaded"></rect>
+                    <rect x="80" y="60" width="20" height="20" class="shaded"></rect>
+
+                    <rect x="60" y="40" width="20" height="20" class="shaded"></rect>
+
+                    <polygon points="20,100 100,65 100,100" stroke-width="0" fill="gainsboro"></polygon>
+                    <rect x="100" y="80" width="20" height="20" stroke="black" stroke-width="0"
+                        fill="gainsboro"></rect>
+                    <text x="110" y="95" font-family="Roboto" font-size="12" fill="black">1</text>
+                    <line x1="15" y1="102" x2="165" y2="37" stroke="blue" stroke-width="1"
+                        fill="none"></line>
+
+                </svg>
+            </image>
+            <text>
+                The shaded region below the line through $(0,0)$ and $(4,1)$ consists of a square
+                (labeled 1 in the diagram) plus the lower half of a $1 \times 4$ rectangle with
+                $(0,0)$ and
+                $(4,1)$ as vertices. The total area below that line is 3, so the line we want must
+                cross $x = 4$ above $(4,1)$. We need a total area of $9 \div 2 = 4.5$. If the line
+                through the origin crosses $x = 4$ at $(4,y)$, then $1 + \dfrac{bh}{2} = 1 +
+                \dfrac{4y}{2} = 4.5$, so $y = \dfrac{7}{4}$ . The slope of the line that connects
+                $(0,0)$
+                to $(4,\dfrac{7}{4} )$ is $\dfrac{7}{16}$ .
+            </text>
+        </solution>
+
+    </problem>
+
+
+    <problem>
+        <question id="2">
+            <text>If the roots of the equation $x^2 - (a + 1)x + a + 4 = 0$ are negative,
+                all possible values of the real number $a$ are in the interval $p \lt a \le q$.
+                What is the ordered pair $(p, q)$? </text>
+        </question>
+        <solution>
+            <text>(-4, -3).</text>
+            <text>
+                First, since the sum of the roots is $a + 1$ and both roots are negative, $a + 1 \lt
+                0$; or $a \lt -1$. Next, the product of the roots is $a + 4$, so $a + 4 \gt 0$; or
+                $a \gt -4$. Finally, the roots are real, so the discriminant must be non-negative.
+                Hence, $a^2 - 2a - 15 \ge 0$, from which $a \le -3$ or $a \ge 5$. Taking the
+                intersection of all three requirements, the roots will be negative precisely when
+                $-4 \lt a \le -3$. Therefore we have $(p, q) = (-4, -3)$.
+            </text>
+        </solution>
+
+    </problem>
+
+
+    <problem>
+        <question id="3">
+            <image align="right">
+                <svg xmlns="http://www.w3.org/2000/svg" width="200" height="170" class="image">
+                    <polygon points="0,150 150,150 75,0" fill="white" stroke="black"></polygon>
+                    <!-- left four-triangle -->
+                    <polygon points="0,150 50,50 100,150" fill="lightgrey" stroke="black"></polygon>
+                    <!-- right four-triangle 
+                    <polygon points="50,150 150,150 100,50" fill="lightgrey" stroke="black"></polygon>
+                    -->
+                    <!-- top four-triangle 
+                    <polygon points="25,100 125,100 75,0" fill="lightgrey" stroke="black"></polygon>
+                    -->
+                    <polygon points="50,50 100,50 75,100" fill="none" stroke="black"></polygon>
+                    <polygon points="25,100 75,100 50,150" fill="none" stroke="black"></polygon>
+                    <polygon points="125,100 75,100 100,150" fill="none" stroke="black"></polygon>
+                    <style>
+                        text {
+                        font-size: 16px;
+                        font-family: Arial, sans-serif;
+                        font-style: italic;
+                        fill: black;
+                        text-anchor: middle;
+                        }
+                    </style>
+                    <text x="75" y="40">a</text>
+                    <text x="50" y="90">b</text>
+                    <text x="75" y="70">c</text>
+                    <text x="100" y="90">d</text>
+                    <text x="25" y="140">e</text>
+                    <text x="50" y="120">f</text>
+                    <text x="75" y="140">g</text>
+                    <text x="100" y="120">h</text>
+                    <text x="125" y="140">i</text>
+                </svg>
+            </image>
+            <text>When a small triangle is surrounded by 3 other small triangles, the result is
+                called a *four-triangle*. (Of the 3 four-triangles in the diagram, one is
+                shaded.) If the integers 1 through 9 are written in the 9 small triangles, 1 per
+                triangle, so the sum of the 4 integers in each four-triangle is the same, what is
+                the least possible value of this sum? </text>
+        </question>
+        <solution>
+            <text>17.</text>
+            <text>
+
+                Let *S* be the sum of the integers in each shaded four-triangle. The sums are equal,
+                so $S = a + b + c + d$, $S = b + e + f + g$, and $S = d + g + h + i$. Adding, $3S =
+                (a + b + c + d + e +f + g + h + i) + (b + d + g)$. The sum of all the integers from
+                1 to 9 is 45, so $3S = 45 + (b + d + g)$. dividing by 3, $S = 15 + \frac{(b + d +
+                g)}{3}$. To make $S$ have the least possible integral value, we must make $(b + d +
+                g)$ divisible by 3 and as small as possible. The least multiple of 3 obtainable by
+                adding 3 different one-digit positive integers is $1 + 2 + 3 = 6$, so the least
+                possible value of $S$ is $15 + \frac{6}{3} = 15 + 2 = 17$.
+            </text>
+            <image>
+                <svg xmlns="http://www.w3.org/2000/svg" width="200" height="180" class="image">
+                    <polygon points="0,150 150,150 75,0" fill="white" stroke="black"></polygon>
+                    <!-- left four-triangle -->
+                    <polygon points="0,150 50,50 100,150" fill="lightgrey" stroke="black"></polygon>
+                    <!-- right four-triangle 
+                    <polygon points="50,150 150,150 100,50" fill="lightgrey" stroke="black"></polygon>
+                    -->
+                    <!-- top four-triangle 
+                    <polygon points="25,100 125,100 75,0" fill="lightgrey" stroke="black"></polygon>
+                    -->
+                    <polygon points="50,50 100,50 75,100" fill="none" stroke="black"></polygon>
+                    <polygon points="25,100 75,100 50,150" fill="none" stroke="black"></polygon>
+                    <polygon points="125,100 75,100 100,150" fill="none" stroke="black"></polygon>
+                    <style>
+                        text {
+                        font-size: 16px;
+                        font-family: Arial, sans-serif;
+                        font-style: italic;
+                        fill: black;
+                        text-anchor: middle;
+                        }
+                    </style>
+                    <text x="75" y="40">5</text>
+                    <text x="50" y="90">1</text>
+                    <text x="75" y="70">9</text>
+                    <text x="100" y="90">2</text>
+                    <text x="25" y="140">7</text>
+                    <text x="50" y="120">6</text>
+                    <text x="75" y="140">3</text>
+                    <text x="100" y="120">4</text>
+                    <text x="125" y="140">8</text>
+                </svg>
+            </image>
+            <text>
+
+                **note:** One arrangement in which each four-triangle has a sum of 17 is shown
+                here. Several variations of this arrangement also have a sum of 17.</text>
+
+        </solution>
+    </problem>
+
+
+    <problem>
+        <question id="5">
+            <image align="right" src="mowing.png" width="200" height="150" />
+            <text>Some workers were asked to mow two fields,
+                one twice as big as the other.
+                They all mowed the larger field for half a day;
+                then they split in half.
+                One group finished the larger field at the day's end.
+                The others mowed the smaller field; but at day's end,
+                there remained a part to do.
+                This part was finished by one worker in a single day.
+                How many workers were there?</text>
+        </question>
+        <solution>
+            <text>
+                8.</text>
+            <text>
+
+                **Method I:** All the workers mowed the larger field for half a day, and half the
+                workers continued mowing there for another half day, so it follows that $1
+                \dfrac{1}{2}$ times as many workers as there were could mow the larger field in half
+                a day. Thus, half the workers can mow $\frac{1}{3}$ of the larger field in half a
+                day. The smaller field is half the size of the larger — but the group sent to mow it
+                can mow only $\dfrac{1}{3}$ of the larger field in the half day they worked on the
+                smaller field. Thus, they left uncut a section equivalent to $\dfrac{1}{2} -
+                \dfrac{1}{3} = \dfrac{1}{6}$ of the *larger* field. Since this took one worker
+                exactly one day to mow, it follows that one worker can mow $\dfrac{1}{6}$ of the
+                larger field in 1 day. On the first day, the workers mowed the larger field plus an
+                amount equivalent to $\dfrac{1}{3}$ of the larger field: a total of $\dfrac{4}{3} =
+                \dfrac{8}{6}$ of the larger field. The number of workers was therefore 8.
+
+                **Method II:** Let the area that 1 worker can mow in 1 day be $m$. In $\dfrac{1}{2}$
+                day, $w$ workers can mow an area of $\dfrac{1}{2}w m$. In the second half of the
+                day, $\dfrac{1}{2}$ the team worked on the larger field; so area the of the larger
+                field is $\dfrac{1}{2} w m + \dfrac{1}{4} w m = \dfrac{3 w m}{4}$. Also, the area
+                mowed by $\dfrac{1}{2} w$ workers, who have mowed the smaller field for
+                $\dfrac{1}{2}$ day, is $\dfrac{1}{4} w m$. Since 1 worker could mow the uncut
+                portion of the smaller field in 1 day, the uncut portion had an area of $m$. Thus,
+                the area of the smaller field is $\dfrac{1}{4} w m + m$. The area of the first field
+                is twice that of the second, so $\dfrac{3 w m}{4} = 2(\dfrac{1}{4}w m + m)$ , and $w
+                = 8$.
+
+            </text>
+        </solution>
+
+    </problem>
+
+</test>

@@ -17,6 +17,7 @@
 
       .image {
         float: right;
+        martin-top: 10px;
         margin-left: 20px; /* Add some space between text and image */
       }
 
@@ -27,6 +28,30 @@
       .solution {
         display: none;
       }
+
+      .solution table {
+        border-collapse: collapse;
+      }
+      .solution th,
+      .solution td {
+        border: 1px solid black;
+        padding: 4px;
+      }
+      .solution td {
+        text-align: right;
+      }
+
+      .no-print {
+        display: block;
+      }
+      @media print {
+        li {
+          break-inside: avoid;
+        }
+        .no-print {
+          display: none;
+        }
+      }
     </style>
   </head>
   <body>
@@ -34,7 +59,7 @@
       <h2>NWML December 12, 2018</h2>
     </div>
 
-    <div>
+    <div class="no-print">
       Oct 14, 1998:
       <a href="nwml.html?xml=19981014-individual.xml">individual</a>,
       <a href="nwml.html?xml=19981014-team.xml">team</a>
@@ -56,6 +81,45 @@
         },
       };
 
+      function textToParagraph(text) {
+        const paragraph = document.createElement("p");
+        paragraph.textContent = text;
+        // add line breaks
+        paragraph.innerHTML = paragraph.textContent.replace(/\n{2}/g, "<br>");
+
+        // replace markdown bold with HTML bold
+        paragraph.innerHTML = paragraph.innerHTML.replace(
+          /\*\*(.*?)\*\*/g,
+          "<b>$1</b>"
+        );
+
+        // replace markdown italics with HTML italics
+        paragraph.innerHTML = paragraph.innerHTML.replace(
+          /\*(.*?)\*/g,
+          "<i>$1</i>"
+        );
+
+        // replace markdown links with HTML links
+        paragraph.innerHTML = paragraph.innerHTML.replace(
+          /\[(.*?)\]\((.*?)\)/g,
+          '<a href="$2" target="_blank">$1</a>'
+        );
+
+        // Replace $$...$$ with \[ ... \]
+        const blockPattern = /\$\$([^$]*[^\s$])\$\$/g;
+        paragraph.innerHTML = paragraph.innerHTML.replace(
+          blockPattern,
+          "\\[ $1 \\]"
+        );
+        // Replace $...$ with \( ... \)
+        const latexPattern = /\$([^$]*[^\s$])\$/g;
+        paragraph.innerHTML = paragraph.innerHTML.replace(
+          latexPattern,
+          "\\( $1 \\)"
+        );
+        return paragraph;
+      }
+
       function getProblems(doc) {
         const problems = doc.getElementsByTagName("problem");
         const problemList = document.createElement("ol");
@@ -73,29 +137,20 @@
           for (let i = 0; i < questionParts.length; i++) {
             const questionPart = questionParts[i];
             if (questionPart.tagName === "text") {
-              const question = document.createElement("p");
-              question.textContent = questionPart.textContent;
-              question.innerHTML = question.textContent.replace(
-                /\n{2}/g,
-                "<br>"
-              );
-              // Replace $$...$$ with \[ ... \]
-              const blockPattern = /\$\$([^$]*[^\s$])\$\$/g;
-              question.innerHTML = question.innerHTML.replace(
-                blockPattern,
-                "\\[ $1 \\]"
-              );
-              // Replace $...$ with \( ... \)
-              const latexPattern = /\$([^$]*[^\s$])\$/g;
-              question.innerHTML = question.innerHTML.replace(
-                latexPattern,
-                "\\( $1 \\)"
-              );
+              const question = textToParagraph(questionPart.textContent);
               problemElement.appendChild(question);
             } else if (questionPart.tagName === "image") {
-              const image = questionPart.getElementsByTagName("svg")[0];
-              image.setAttribute("class", "image");
-              problemElement.appendChild(image);
+              if (questionPart.getAttribute("src")) {
+                const image = document.createElement("img");
+                image.src = questionPart.getAttribute("src");
+                image.setAttribute("class", "image");
+                image.setAttribute("width", "300");
+                problemElement.appendChild(image);
+              } else {
+                const image = questionPart.getElementsByTagName("svg")[0];
+                image.setAttribute("class", "image");
+                problemElement.appendChild(image);
+              }
             }
           }
           const answerDiv = document.createElement("div");
@@ -122,54 +177,53 @@
           // get the "solution" tag if it exists
           const button = document.createElement("button");
           button.textContent = "Solution";
+          button.setAttribute("class", "no-print");
           button.onclick = function () {
-            const solution =
+            const solutionBtn =
               problemElement.getElementsByClassName("solution")[0];
-            if (!solution.style.display || solution.style.display === "none") {
-              solution.style.display = "block";
+            if (
+              !solutionBtn.style.display ||
+              solutionBtn.style.display === "none"
+            ) {
+              solutionBtn.style.display = "block";
             } else {
-              solution.style.display = "none";
+              solutionBtn.style.display = "none";
             }
           };
 
           const solutions = problem.getElementsByTagName("solution");
           if (solutions.length > 0) {
             problemElement.appendChild(button);
-            const solution = document.createElement("div");
-            solution.setAttribute("class", "solution");
-            //const heading = document.createElement("h4");
-            //heading.innerText = "Solution";
-            //solution.appendChild(heading);
+            const solutionElement = document.createElement("div");
+            solutionElement.setAttribute("class", "solution");
             const solutionParts = solutions[0].childNodes;
             for (let i = 0; i < solutionParts.length; i++) {
               const solutionPart = solutionParts[i];
-              if (solutionPart.tagName === "text") {
-                const solutionText = document.createElement("p");
-                // add line breaks
-                solutionText.innerHTML = solutionPart.textContent.replace(
-                  /\n{2}/g,
-                  "<br>"
-                );
-                // Replace $$...$$ with \[ ... \]
-                const blockPattern = /\$\$([^$]*[^\s$])\$\$/g;
-                solutionText.innerHTML = solutionText.innerHTML.replace(
-                  blockPattern,
-                  "\\[ $1 \\]"
-                );
-                // Replace $...$ with \( ... \)
-                const latexPattern = /\$([^$]*[^\s$])\$/g;
-                solutionText.innerHTML = solutionText.innerHTML.replace(
-                  latexPattern,
-                  "\\( $1 \\)"
-                );
-                solution.appendChild(solutionText);
-              } else if (solutionPart.tagName === "image") {
-                const image = solutionPart.getElementsByTagName("svg")[0];
-                image.setAttribute("class", "image");
-                solution.appendChild(image);
+              let solution;
+              switch (solutionPart.tagName) {
+                case "text":
+                  solution = textToParagraph(solutionPart.textContent);
+                  solutionElement.appendChild(solution);
+                  break;
+                case "image":
+                  const image = solutionPart.getElementsByTagName("svg")[0];
+                  image.setAttribute("class", "image");
+                  solutionElement.appendChild(image);
+                  break;
+                case "html":
+                  solution = document.createElement("div");
+                  solution.innerHTML = solutionPart.innerHTML;
+                  // Replace $...$ with \( ... \)
+                  const latexPattern = /\$([^$]*[^\s$])\$/g;
+                  solution.innerHTML = solution.innerHTML.replace(
+                    latexPattern,
+                    "\\( $1 \\)"
+                  );
+                  solutionElement.appendChild(solution);
+                  break;
               }
+              problemElement.appendChild(solutionElement);
             }
-            problemElement.appendChild(solution);
           }
         }
         return problemList;
