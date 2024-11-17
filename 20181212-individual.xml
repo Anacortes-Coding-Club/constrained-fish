@@ -59,7 +59,7 @@
     </problem>
     <problem>
         <question id="3">
-            <text><![CDATA[If $N > 1$, then $\sqrt[3]{N\sqrt[3]{N\sqrt[3]N}} =$]]></text>
+            <text>If $N \gt 1$, then $\sqrt[3]{N\sqrt[3]{N\sqrt[3]N}} =$</text>
         </question>
         <answers>
             <answer>$N^{\frac{1}{27}}$</answer>
@@ -281,7 +281,8 @@
     </problem>
     <problem>
         <question>
-            <text><![CDATA[If x and y are real numbers, with $x > y$ and $xy = 1$, find the minimum possible value for $\dfrac{x^2+y^2}{x-y}$]]></text>
+            <text>If x and y are real numbers, with $x \gt y$ and $xy = 1$,
+                find the minimum possible value for $\dfrac{x^2+y^2}{x-y}$</text>
         </question>
         <answers>
             <answer>$2\sqrt{2}$</answer>
@@ -291,27 +292,32 @@
             <answer>6</answer>
         </answers>
         <solution>
-            <text><![CDATA[Given: $x>y$ and $xy = 1$
-                
+            <text>Given: $x \gt y$ and $xy = 1$
+
                 $$\frac{x^2+y^2}{x-y} = \frac{x^2-2xy+y^2+2xy}{x-y}$$
                 $$=\frac{(x-y)^2+2(1)}{x-y}$$
                 $$=(x-y)+ \frac{2}{x-y}$$
                 Let $z = x-y$,
                 $$=z+\frac{2}{z}$$
-                Minimize $S=z+\dfrac{2}{z}$ by taking the derivative $\dfrac{dS}{dz} = 1 - \dfrac{2}{z^2}$ and setting it to 0.
-                
-                Then $z>0$ and $z\cdot\dfrac{2}{z} = 2$, which is a constant.
-                
+                Minimize $S=z+\dfrac{2}{z}$ by taking the derivative $\dfrac{dS}{dz} = 1 -
+                \dfrac{2}{z^2}$ and setting it to 0.
+
+                Then $z \gt 0$ and $z\cdot\dfrac{2}{z} = 2$, which is a constant.
+
                 Or $AM \ge GM$, says $\dfrac{a+b}{2} \ge \sqrt{ab}$
-                Then for $a = z$ and $b = \dfrac{2}{z}$, $$\frac{z+\frac{2}{z}}{2} \ge \sqrt{z\cdot\frac{2}{z}}$$
+                Then for $a = z$ and $b = \dfrac{2}{z}$, $$\frac{z+\frac{2}{z}}{2} \ge
+                \sqrt{z\cdot\frac{2}{z}}$$
                 Canceling z and multiplying both sides by 2, $$z+\frac{2}{z} \ge 2\sqrt{2}$$
                 $\beta \gamma \varphi$
-                If the product of two quantities is constant, their sum is minimal when the quantities are equal. (If $ab=k$, the minimum of $a+b$ occurs when $a=b$.)  [AM-GM inequality](https://en.wikipedia.org/wiki/AM%E2%80%93GM_inequality)
-                So $z+\dfrac{2}{z}$ is minimal when $z = \dfrac{2}{z}$, or $z = \sqrt{2}$.  
+                If the product of two quantities is constant, their sum is minimal when the
+                quantities are equal. (If $ab=k$, the minimum of $a+b$ occurs when $a=b$.)
+                [AM-GM inequality](https://en.wikipedia.org/wiki/AM%E2%80%93GM_inequality)
+                So $z+\dfrac{2}{z}$ is minimal when $z = \dfrac{2}{z}$, or $z = \sqrt{2}$.
                 $$\implies x-y = \sqrt{2}$$
                 and
-                $$\frac{(x-y)^2+2(1)}{x-y} = \frac{\sqrt{2}^2+2}{\sqrt{2}} = \frac{4}{\sqrt{2}} = 2\sqrt{2}$$
-                ]]>
+                $$\frac{(x-y)^2+2(1)}{x-y} = \frac{\sqrt{2}^2+2}{\sqrt{2}} = \frac{4}{\sqrt{2}} =
+                2\sqrt{2}$$
+
             </text>
             <link>
                 https://nyciml.org/wp-content/uploads/1984_1985_Fall_SeniorA_Contest_COMPLETE.pdf#page=8
