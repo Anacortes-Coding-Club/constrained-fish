@@ -14,14 +14,12 @@
                 13), (9, 12, 15), (12, 16, 20), (12, 35, 37) give us the solutions 5, 9, 16, 35.
             </text>
             <text>
-                **Method II:** Let $y = \sqrt{12^2 + x^2}$ and use a calculator's table feature to
+                **Method II:** Let $y = \sqrt{12^2 + x^2}$ and use a calculator's table (or other)
+                feature to
                 find integral $y$ when $x$ is integral.
             </text>
             <text>
-                **Method III:** Use another calculator feature to determine y values for various x.
-            </text>
-            <text>
-                **Method IV:** $12^2 + x^2 = c^2$ so $144 = (c + x)(c - x)$. Now, factor 144.
+                **Method III:** $12^2 + x^2 = c^2$ so $144 = (c + x)(c - x)$. Now, factor 144.
                 Finally, set the larger factor equal to $c+x$, the smaller factor equal to $c-x$ and
                 solve. (Find $2c$ by adding the equations.)</text>
             <html>

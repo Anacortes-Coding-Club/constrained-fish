@@ -4,7 +4,7 @@
     <problem>
         <question id="1">
             <image>
-                <svg xmlns="http://www.w3.org/2000/svg" class="image" width="180" height="130">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="5 0 120 130" width="150">
                     <rect x="50" y="10" width="50" height="50" stroke="black" fill="none"></rect>
                     <rect x="25" y="60" width="50" height="50" stroke="black" fill="none"></rect>
                     <rect x="75" y="60" width="50" height="50" stroke="black" fill="none"></rect>
@@ -26,6 +26,22 @@
             <answer blank="true"></answer>
         </answers>
         <solution>
+            <image align="right">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="5 0 120 130" width="150">
+                    <rect x="50" y="10" width="50" height="50" stroke="black" fill="none"></rect>
+                    <rect x="25" y="60" width="50" height="50" stroke="black" fill="none"></rect>
+                    <rect x="75" y="60" width="50" height="50" stroke="black" fill="none"></rect>
+                    <line x1="25" y1="110" x2="100" y2="10" stroke="black"></line>
+                    <text x="15" y="118" font-size="18" text-anchor="middle">A</text>
+                    <text x="110" y="16" font-size="18" text-anchor="middle">B</text>
+                    <line x1="100" y1="110" x2="100" y2="10" stroke="blue"></line>
+                    <text x="110" y="125" font-size="18" text-anchor="middle">C</text>
+                    <text x="50" y="108" font-size="14" text-anchor="middle" font-style="italic">2x</text>
+                    <text x="88" y="108" font-size="14" text-anchor="middle" font-style="italic">x</text>
+                    <text x="110" y="40" font-size="14" text-anchor="middle" font-style="italic">2x</text>
+                    <text x="110" y="90" font-size="14" text-anchor="middle" font-style="italic">2x</text>
+                </svg>
+            </image>
             <text>
                 Let the length of a side of each square be $2x$, and let C be the point where the
                 vertical segment through B crosses the horizontal segment through A. The lengths
@@ -39,7 +55,8 @@
     <problem>
         <question id="3">
             <image align="right">
-                <svg xmlns="http://www.w3.org/2000/svg" width="200" height="100" fill="white">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="5 10 145 80" width="200"
+                    fill="white">
                     <polygon points="5,50 50,10 50,90" stroke="black" fill="lightgray" />
                     <polygon points="50,10 150,50 50,90" stroke="black" fill="none" />
                     <line x1="5" y1="50" x2="150" y2="50" stroke="black" />
@@ -123,7 +140,8 @@
     <problem>
         <question id="6">
             <image>
-                <svg xmlns="http://www.w3.org/2000/svg" class="image" width="201" height="110">
+                <svg xmlns="http://www.w3.org/2000/svg" class="image" viewBox="0 0 201 105"
+                    width="200">
                     <defs>
                         <clipPath id="cut-off-bottom">
                             <rect x="0" y="0" width="200" height="100"></rect>
@@ -216,7 +234,7 @@
     <problem>
         <question id="9">
             <image>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 190 200" height="145">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 190 200" height="150">
                     <polyline
                         points="20,180 20,20 164,20 164,148 52,148 52,52 132,52 132,116 84,116 84,84 100,84"
                         stroke="black"
@@ -255,6 +273,121 @@
             <answer blank="true"></answer>
         </answers>
         <solution>
+            <image>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="180"
+                    fill="white">
+
+                    <marker
+                        id="triangle"
+                        viewBox="0 0 10 10" refX="0" refY="5"
+                        markerUnits="strokeWidth"
+                        markerWidth="4" markerHeight="3"
+                        fill="darkgray"
+                        orient="auto">
+                        <path d="M 0 0 L 10 5 L 0 10 z" />
+                    </marker>
+
+                    <style>
+                        .text-label {
+                        font-size: 18px;
+                        font-family: Arial, sans-serif;
+                        fill: black;
+                        text-anchor: middle;
+                        }
+
+                        .gridline {
+                        stroke: gainsboro;
+                        stroke-dasharray: 2, 2;
+                        fill: none;
+
+                        }
+                        .axis {
+                        marker-end: url(#triangle);
+                        stroke: darkgray;
+                        stroke-width: 1;
+                        }
+                    </style>
+
+
+                    <!-- horizontal gridlines -->
+                    <line
+                        x1="0" y1="196" x2="190" y2="196" class="gridline"></line>
+                    <line x1="0" y1="180" x2="190"
+                        y2="180" class="gridline"></line>
+                    <line x1="0" y1="164" x2="190" y2="164" class="gridline"></line>
+                    <line
+                        x1="0" y1="148" x2="190" y2="148" class="gridline"></line>
+                    <line x1="0" y1="132" x2="190"
+                        y2="132" class="gridline"></line>
+                    <line x1="0" y1="116" x2="190" y2="116" class="gridline"></line>
+                    <line
+                        x1="0" y1="100" x2="190" y2="100" class="gridline"></line>
+                    <line x1="0" y1="84" x2="190"
+                        y2="84" class="gridline"></line>
+                    <line x1="0" y1="68" x2="190" y2="68" class="gridline"></line>
+                    <line
+                        x1="0" y1="52" x2="190" y2="52" class="gridline"></line>
+                    <line x1="0" y1="36" x2="190"
+                        y2="36" class="gridline"></line>
+                    <line x1="0" y1="20" x2="190" y2="20" class="gridline"></line>
+                    <line
+                        x1="0" y1="4" x2="190" y2="4" class="gridline"></line>
+
+                    <!-- vertical gridlines -->
+                    <line x1="4" y1="200" x2="4" y2="0"
+                        class="gridline"></line>
+                    <line x1="20" y1="200" x2="20" y2="0"
+                        class="gridline"></line>
+                    <line x1="36" y1="200" x2="36" y2="0" class="gridline"></line>
+                    <line
+                        x1="52" y1="200" x2="52" y2="0" class="gridline"></line>
+                    <line x1="68" y1="200" x2="68"
+                        y2="0" class="gridline"></line>
+                    <line x1="84" y1="200" x2="84" y2="0" class="gridline"></line>
+                    <line
+                        x1="100" y1="200" x2="100" y2="0" class="gridline"></line>
+                    <line x1="116" y1="200" x2="116"
+                        y2="0" class="gridline"></line>
+                    <line x1="132" y1="200" x2="132" y2="0" class="gridline"></line>
+                    <line
+                        x1="148" y1="200" x2="148" y2="0" class="gridline"></line>
+                    <line x1="164" y1="200" x2="164"
+                        y2="0" class="gridline"></line>
+                    <line x1="180" y1="200" x2="180" y2="0" class="gridline"></line>
+
+                    <!-- axes -->
+                    <line x1="20" y1="190" x2="20" y2="12" class="axis"></line>
+                    <line
+                        x1="10" y1="180" x2="180" y2="180" class="axis"
+                    ></line>
+                    <text x="185" y="176" font-size="14" fill="darkgray" font-style="italic"
+                        text-anchor="middle">x</text>
+                    <text x="26" y="10" font-size="14" fill="darkgray" font-style="italic"
+                        text-anchor="middle">y</text>
+
+                    <polyline
+                        points="20,180 20,20 164,20 164,148 52,148 52,52 132,52 132,116 84,116 84,84 100,84"
+                        stroke="black"
+                        fill="none" />
+
+                    <text x="10" y="190" class="text-label">A</text>
+                    <text x="10" y="20"
+                        class="text-label">B</text>
+                    <text x="175" y="20" class="text-label">C</text>
+                    <text x="175"
+                        y="160" class="text-label">D</text>
+                    <text x="40" y="160" class="text-label">E</text>
+                    <text
+                        x="40" y="50" class="text-label">F</text>
+                    <text x="140" y="50" class="text-label">G</text>
+                    <text
+                        x="140" y="130" class="text-label">H</text>
+                    <text x="75" y="130" class="text-label">I</text>
+                    <text
+                        x="75" y="80" class="text-label">J</text>
+                    <text x="110" y="90" class="text-label">K</text>
+                </svg>
+            </image>
             <text>Points A and K are the vertices of the acute angles of a right triangle whose legs
                 are 5 and 6. This can be verified by assigning coordinates to the lettered points as
                 indicated in the diagram which accompanies this solution. By the distance formula,
