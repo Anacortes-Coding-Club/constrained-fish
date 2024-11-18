@@ -22,25 +22,19 @@
             <answer>800</answer>
             <answer>1000</answer>
             <answer>1200</answer>
-            <answer>1600</answer>
-            <answer>None</answer>
+            <answer correct="true">1600</answer>
+            <answer blank="true"></answer>
         </answers>
+        <solution>
+            <text>
+                Let the length of a side of each square be $2x$, and let C be the point where the
+                vertical segment through B crosses the horizontal segment through A. The lengths
+                of the legs of right $\triangle ABC$ are $3x$ and $4x$, so $AB = 5x = 100$, and $x =
+                20$.
+                Finally, the area of each square is $(2x)^2 = 40^2 = 1600$.
+            </text>
+        </solution>
     </problem>
-
-    <!-- <problem>
-        <question id="2">
-            <text>When $x = 10$, the expression $\sqrt{1+2+3+x}$ has the value 4.
-                What are all four integers $x \lt 10$ for which $\sqrt{1+2+3+x}$ has an integral
-                value?</text>
-        </question>
-        <answers>
-            <answer>3, 5, 6, 9</answer>
-            <answer>0, 3, 6, 8</answer>
-            <answer>1, 3, 5, 9</answer>
-            <answer>1, 3, 5, 8</answer>
-            <answer>None</answer>
-        </answers>
-    </problem> -->
 
     <problem>
         <question id="3">
@@ -66,10 +60,16 @@
         <answers>
             <answer>$\dfrac{3}{2}$</answer>
             <answer>$\dfrac{6}{5}$</answer>
-            <answer>$\dfrac{12}{7}$</answer>
+            <answer correct="true">$\dfrac{12}{7}$</answer>
             <answer>$\dfrac{9}{5}$</answer>
-            <answer>None</answer>
+            <answer blank="true"></answer>
         </answers>
+        <solution>
+            <text>Since the shorter diagonal is a common base for both the shaded and unshaded
+                triangles, the ratio of their areas equals the ratio of their altitudes. Hence $0.40
+                = \dfrac{2}{5} = \dfrac{x}{6-x}$, so $x=\dfrac{12}{7}$
+            </text>
+        </solution>
     </problem>
 
     <problem>
@@ -85,11 +85,17 @@
         </question>
         <answers>
             <answer>30 mph</answer>
-            <answer>60 mph</answer>
+            <answer correct="true">60 mph</answer>
             <answer>90 mph</answer>
             <answer>120 mph</answer>
-            <answer>None</answer>
+            <answer blank="true"></answer>
         </answers>
+        <solution>
+            <text>The elephant outweighs the rabbit 5280 to 1. Therefore, the rabbit must move at a
+                rate 5280 times that of the elephant. Thus, the rabbit's rate is 5280 feet per
+                minute—which is 1 mile per minute. The rabbit's rate, in miles per hour, is 60
+                mph.</text>
+        </solution>
     </problem>
 
     <problem>
@@ -100,10 +106,18 @@
         <answers>
             <answer>1000</answer>
             <answer>11100</answer>
-            <answer>1001100</answer>
-            <answer>1111010</answer>
-            <answer>None</answer>
+            <answer>1011000</answer>
+            <answer>101101100</answer>
+            <answer blank="true" correct="true" myAnswerIs="11,111,111,100">None</answer>
         </answers>
+        <solution>
+            <text>
+                An integer $N$ divisible by $225 = 25 \times 9$ must be divisible by both 25 and 9.
+                Since $N$'s only digits are 0s and 1s, $N$'s final two digits must be 00. For
+                divisibility by 9, the sum of $N$'s digits must be a multiple of 9. The smallest
+                possible value of $N$ is 11,111,111,100.
+            </text>
+        </solution>
     </problem>
 
     <problem>
@@ -130,10 +144,20 @@
         <answers>
             <answer>50</answer>
             <answer>75</answer>
-            <answer>100</answer>
+            <answer correct="true">100</answer>
             <answer>125</answer>
-            <answer>None</answer>
+            <answer blank="true"></answer>
         </answers>
+        <solution>
+            <text>**Method I:** Divide the larger square into 4 congruent smaller squares. Rotate
+                the larger square 90° clockwise, and it is clear that the smaller square is
+                one-quarter of the larger square. The larger square's area is $4 \times 25 = 100$.</text>
+            <text>**Method II:** In the diagram, each dotted segment is both the hypotenuse of a
+                right triangle and a radius of the circle; so the dotted segments are congruent. In
+                one right triangle, the legs are $x$ and $2x$. In the other, the legs are $5$ and $x
+                + 5$. By the Pythagorean Theorem, $x^2 + (2x)^2 = 5^2 + (x+5)^2$. Solving, $x = 5$;
+                so a side of the large square is 10, and the area of the large square is 100.</text>
+        </solution>
     </problem>
 
     <problem>
@@ -143,12 +167,19 @@
                 and the sum of the first 6 terms is 4, what is the sum of the first 12 terms?</text>
         </question>
         <answers>
-            <answer>$\dfrac{40}{9}$</answer>
+            <answer correct="true">$\dfrac{40}{9}$</answer>
             <answer>$\dfrac{9}{2}$</answer>
             <answer>5</answer>
             <answer>6</answer>
-            <answer>None</answer>
+            <answer blank="true"></answer>
         </answers>
+        <solution>
+            <text>Let the first term be $a$ and let the common ratio be $r$. Since the sum of the
+                first six terms is 4, and the sum of the first three terms is 3, we have that $a +
+                ar + ar^2 + ar^3 + ar^4 + ar^5 = 4 = 3 + r^3(a + ar + ar^2) = 3 + 3r^3$, so $r^3 =
+                1/3$. The sum of the first twelve terms is $4 + r^6(a + ar + ar^2 + ar^3 + ar^4 +
+                ar^5) = 4+(\dfrac{1}{9})(4) = \dfrac{40}{9}$.</text>
+        </solution>
     </problem>
 
     <problem>
@@ -163,15 +194,29 @@
             <answer>50</answer>
             <answer>60</answer>
             <answer>80</answer>
-            <answer>100</answer>
-            <answer>None</answer>
+            <answer correct="true">100</answer>
+            <answer blank="true"></answer>
         </answers>
+        <solution>
+            <text>To maximize the number of students, minimize the number of chocolates each ate
+                (under the condition that no more than 2 students ate the same number of
+                chocolates),
+                with 2 students eating 1 chocolate, 2 eating 2 chocolates, 2 eating 3 chocolates,
+                etc.
+                As a consequence, $2(1 + 2 + 3 + \dots + n) \le 2600$, or $1 + 2 + \dots + n \le
+                1300$.
+                Summing on the left and then clearing denominators, $n(n + 1) \le 2600$.
+                If $n = 50$, the sum is 2550.
+                Even a single additional person would bring the sum to at least 51 more, which
+                exceeds 2600, so the greatest possible value of n is 50. Since 2 students ate each
+                number of chocolates, at most 100 students are needed to consume 2550 chocolates.</text>
+        </solution>
     </problem>
 
     <problem>
         <question id="9">
             <image>
-                <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 190 200" height="145">
                     <polyline
                         points="20,180 20,20 164,20 164,148 52,148 52,52 132,52 132,116 84,116 84,84 100,84"
                         stroke="black"
@@ -205,10 +250,17 @@
         <answers>
             <answer>49</answer>
             <answer>50</answer>
-            <answer>61</answer>
+            <answer correct="true">61</answer>
             <answer>85</answer>
-            <answer>None</answer>
+            <answer blank="true"></answer>
         </answers>
+        <solution>
+            <text>Points A and K are the vertices of the acute angles of a right triangle whose legs
+                are 5 and 6. This can be verified by assigning coordinates to the lettered points as
+                indicated in the diagram which accompanies this solution. By the distance formula,
+                the distance from $A(0, 0)$ to $K(5, 6)$ is $\sqrt{61}$. Its square is 61.
+            </text>
+        </solution>
     </problem>
 
     <problem>
@@ -218,11 +270,19 @@
         </question>
         <answers>
             <answer>$\dfrac{11}{3}$</answer>
-            <answer>$\dfrac{23}{6}$</answer>
+            <answer correct="true">$\dfrac{23}{6}$</answer>
             <answer>$\dfrac{873}{243}$</answer>
             <answer>3</answer>
-            <answer>None</answer>
+            <answer blank="true"></answer>
         </answers>
+        <solution>
+            <text>Since $3^a = 9^b$ implies $3^a = 3^{2b}$, $a = 2b$, and $\dfrac{a}{b} = 2$.
+                $9^b = 27^c$ implies $3^{2b} = 3^{3c}$, $2b = 3c$, so $\dfrac{b}{c} = \dfrac{3}{2}$.
+                Since $3^a = 27^c$ implies $a = 3c$, $\dfrac{c}{a} = \dfrac{1}{3}$.
+                Finally, $\dfrac{a}{b} + \dfrac{b}{c} + \dfrac{c}{a} = 2+\dfrac{3}{2}+\dfrac{1}{3} =
+                \dfrac{23}{6}$.
+            </text>
+        </solution>
     </problem>
 
     <problem>
@@ -237,9 +297,14 @@
             <answer>-4</answer>
             <answer>5</answer>
             <answer>-6</answer>
-            <answer>None</answer>
+            <answer blank="true" correct="true" myAnswerIs="-5"></answer>
         </answers>
+        <solution>
+            <text>Let $f(x) = x^4 - x^3 - 18x^2 + 52x + k$. By the factor theorem, $f(2) = 40 + k =
+                0$, from which $k = -40$. Repeated division shows that $(x - 2)$ is a triple factor
+                of $f(x)$, the fourth factor being $(x + 5)$. Therefore, the other value of $r$ is
+                -5.</text>
+        </solution>
+
     </problem>
-
-
 </test>

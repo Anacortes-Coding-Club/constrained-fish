@@ -101,38 +101,39 @@
               var answerElement = answerElements[j];
 
               const answer = document.createElement("span");
+
+              if (answerElement.getAttribute("correct")) {
+                answer.setAttribute("class", "correct answer");
+              } else {
+                answer.setAttribute("class", "answer");
+              }
               const letter = String.fromCharCode(65 + j); // Generate letter (A, B, C, etc.)
               // Replace $...$ with \( ... \)
               const latexPattern = /\$([^$]*[^\s$])\$/g;
-              const answerDisplay = answerElement.textContent.replace(
+              let answerDisplay = answerElement.textContent.replace(
                 latexPattern,
                 "\\( $1 \\)"
               );
-              answer.innerHTML = `(${letter}) ${answerDisplay} &emsp;`;
+              if (answerElement.getAttribute("blank")) {
+                answerDisplay = `My answer is:
+                  <span class="myAnswerIsBlank"></span>`;
+                if (answerElement.getAttribute("myAnswerIs")) {
+                  answerDisplay += `
+                    <span class="myAnswerIs">${answerElement.getAttribute(
+                      "myAnswerIs"
+                    )}</span>`;
+                }
+              }
+
+              answer.innerHTML = `(${letter}) ${answerDisplay}`;
               answerDiv.appendChild(answer);
+              // Reprocess MathJax content to ensure proper rendering
             }
           }
           problemElement.appendChild(answerDiv);
-          // get the "solution" tag if it exists
-          const button = document.createElement("button");
-          button.textContent = "Solution";
-          button.setAttribute("class", "no-print");
-          button.onclick = function () {
-            const solutionBtn =
-              problemElement.getElementsByClassName("solution")[0];
-            if (
-              !solutionBtn.style.display ||
-              solutionBtn.style.display === "none"
-            ) {
-              solutionBtn.style.display = "block";
-            } else {
-              solutionBtn.style.display = "none";
-            }
-          };
 
           const solutions = problem.getElementsByTagName("solution");
           if (solutions.length > 0) {
-            problemElement.appendChild(button);
             const solutionElement = document.createElement("div");
             solutionElement.setAttribute("class", "solution");
             const solutionParts = solutions[0].childNodes;
@@ -166,6 +167,33 @@
           }
         }
         return problemList;
+      }
+
+      function evaluateSolutions() {
+        const showSolutions = document.getElementById("showSolutions").checked;
+        const solutions = document.getElementsByClassName("solution");
+        for (let i = 0; i < solutions.length; i++) {
+          if (showSolutions) {
+            solutions[i].style.display = "block";
+          } else {
+            solutions[i].style.display = "none";
+          }
+        }
+        const answers = document.getElementsByClassName("correct");
+        for (let i = 0; i < answers.length; i++) {
+          if (showSolutions) {
+            answers[i].style.border = "2px solid green";
+          } else {
+            answers[i].style.border = "none";
+          }
+          if (answers[i].getElementsByClassName("myAnswerIs").length > 0) {
+            answers[i].getElementsByClassName("myAnswerIs")[0].style.display =
+              showSolutions ? "inline" : "none";
+            answers[i].getElementsByClassName(
+              "myAnswerIsBlank"
+            )[0].style.display = showSolutions ? "none" : "inline-block";
+          }
+        }
       }
 
       function getTitle(doc) {
@@ -207,20 +235,14 @@
 
             MathJax.typeset();
             document.getElementById("contest-select").value = xmlFile;
+            document.getElementById("showSolutions").checked = false;
           });
       }
 
       let xmlFile = "20241211-individual.xml";
-      // get XML file from query string
-      if (window.location.search) {
-        const queryXml = new URLSearchParams(window.location.search).get("xml");
-        if (queryXml) {
-          xmlFile = queryXml;
-        }
-        console.log(`XML File: ${xmlFile}`);
-      }
 
       loadContest(xmlFile);
+      evaluateSolutions();
     </script>
     <style>
       .container {
@@ -252,6 +274,21 @@
       .solution td {
         text-align: right;
       }
+      .answer {
+        padding: 4px;
+        margin-right: 1em;
+        display: inline-block;
+      }
+
+      .myAnswerIsBlank {
+        border-bottom: 1px solid black;
+        display: inline-block;
+        width: 3em;
+      }
+
+      .myAnswerIs {
+        display: none;
+      }
 
       .no-print {
         display: block;
@@ -275,10 +312,11 @@
       </select>
       | Mark
       <input
+        onChange="evaluateSolutions()"
         type="checkbox"
-        id="individual"
+        id="showSolutions"
         name="contest"
-        value="individual"
+        value="true"
       />
       for Solutions
     </div>
