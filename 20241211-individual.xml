@@ -167,9 +167,51 @@
             <answer blank="true"></answer>
         </answers>
         <solution>
+            <image>
+                <svg xmlns="http://www.w3.org/2000/svg" class="image" viewBox="0 0 200 200"
+                    width="180">
+
+                    <circle cx="100" cy="100" r="100" stroke="black" fill="white"
+                    ></circle>
+                    <rect x="55" y="10" width="90" height="90" stroke="black" fill="white"></rect>
+                    <rect x="100" y="55" width="90" height="90" stroke="black" fill="none"></rect>
+                    <rect x="145" y="55" width="45" height="45" stroke="black" fill="none"></rect>
+                    <line x1="0" y1="100" x2="200" y2="100" stroke="black"></line>
+                    <circle cx="100" cy="100" r="2"></circle>
+                </svg>
+            </image>
             <text>**Method I:** Divide the larger square into 4 congruent smaller squares. Rotate
                 the larger square 90° clockwise, and it is clear that the smaller square is
                 one-quarter of the larger square. The larger square's area is $4 \times 25 = 100$.</text>
+            <image>
+                <svg xmlns="http://www.w3.org/2000/svg" class="image" width="220"
+                    viewBox="0 0 200 125">
+                    <style>
+                        .gridline {
+                        stroke: blue;
+                        stroke-width: 2;
+                        stroke-dasharray: 2, 4;
+                        }
+                    </style>
+                    <defs>
+                        <clipPath id="cut-off-bottom">
+                            <rect x="0" y="0" width="200" height="100"></rect>
+                        </clipPath>
+                    </defs>
+                    <circle cx="100" cy="100" r="100" stroke="black" fill="white"
+                        clip-path="url(#cut-off-bottom)"></circle>
+                    <rect x="55" y="10" width="90" height="90" stroke="black" fill="white"></rect>
+                    <rect x="145" y="55" width="45" height="45" stroke="black" fill="none"></rect>
+                    <line x1="0" y1="100" x2="200" y2="100" stroke="black"></line>
+                    <line x1="100" y1="100" x2="145" y2="10" class="gridline"></line>
+                    <line x1="100" y1="100" x2="190" y2="55" class="gridline"></line>
+                    <circle cx="100" cy="100" r="2"></circle>
+                    <text x="125" y="115" font-style="italic" text-anchor="middle">x</text>
+                    <text x="132" y="75" font-style="italic" text-anchor="middle">2x</text>
+                    <text x="170" y="115" text-anchor="middle">5</text>
+                    <text x="184" y="85" text-anchor="middle">5</text>
+                </svg>
+            </image>
             <text>**Method II:** In the diagram, each dotted segment is both the hypotenuse of a
                 right triangle and a radius of the circle; so the dotted segments are congruent. In
                 one right triangle, the legs are $x$ and $2x$. In the other, the legs are $5$ and $x
