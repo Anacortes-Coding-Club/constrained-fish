@@ -90,24 +90,35 @@
         <question id="4">
             <image align="right">
                 <svg xmlns="http://www.w3.org/2000/svg" class="image" width="200" height="130">
+                    <marker
+                        id="triangle"
+                        viewBox="0 0 10 10" refX="0" refY="5"
+                        markerUnits="strokeWidth"
+                        markerWidth="4" markerHeight="3"
+                        fill="black"
+                        orient="auto">
+                        <path d="M 0 0 L 10 5 L 0 10 z" />
+                    </marker>
                     <style>
+                        .text-label {
+                        font-size: 18px;
+                        font-family: Arial, sans-serif;
+                        fill: black;
+                        text-anchor: middle;
+                        }
+
                         .gridline {
-                        stroke: gray;
+                        stroke: gainsboro;
                         stroke-dasharray: 2, 2;
                         fill: none;
+
                         }
-                        .shaded {
+                        .axis {
+                        marker-end: url(#triangle);
                         stroke: black;
-                        fill: lightgray;
+                        stroke-width: 1;
                         }
                     </style>
-                    <!-- axes -->
-                    <line x1="20" y1="120" x2="20" y2="20" stroke="black" stroke-width="2"
-                        fill="none"></line>
-                    <line x1="10" y1="110" x2="170" y2="110" stroke="black" stroke-width="2"
-                        fill="none"></line>
-                    <text x="180" y="115" font-size="18" font-style="italic" text-anchor="middle">x</text>
-                    <text x="15" y="15" font-size="18" font-style="italic" text-anchor="middle">y</text>
 
                     <!-- horizontal gridlines -->
                     <line x1="15" y1="90" x2="165" y2="90" class="gridline"></line>
@@ -123,6 +134,12 @@
                     <line x1="120" y1="115" x2="120" y2="20" class="gridline"></line>
                     <line x1="140" y1="115" x2="140" y2="20" class="gridline"></line>
                     <line x1="160" y1="115" x2="160" y2="20" class="gridline"></line>
+
+                    <!-- axes -->
+                    <line x1="20" y1="120" x2="20" y2="20" class="axis"></line>
+                    <line x1="10" y1="110" x2="170" y2="110" class="axis"></line>
+                    <text x="180" y="115" font-size="18" font-style="italic" text-anchor="middle">x</text>
+                    <text x="15" y="15" font-size="18" font-style="italic" text-anchor="middle">y</text>
 
                     <!-- shaded region -->
                     <rect x="20" y="90" width="20" height="20" class="shaded"></rect>
@@ -148,7 +165,16 @@
             <text>
                 $\dfrac{7}{16}$.</text>
             <image>
-                <svg xmlns="http://www.w3.org/2000/svg" class="image" width="200" heigth="130">
+                <svg xmlns="http://www.w3.org/2000/svg" class="image">
+                    <marker
+                        id="triangle"
+                        viewBox="0 0 10 10" refX="0" refY="5"
+                        markerUnits="strokeWidth"
+                        markerWidth="4" markerHeight="3"
+                        fill="black"
+                        orient="auto">
+                        <path d="M 0 0 L 10 5 L 0 10 z" />
+                    </marker>
                     <style>
                         .gridline {
                         stroke: gray;
@@ -159,12 +185,15 @@
                         stroke: black;
                         fill: lightgray;
                         }
+                        .axis {
+                        marker-end: url(#triangle);
+                        stroke: black;
+                        stroke-width: 2;
+                        }
                     </style>
                     <!-- axes -->
-                    <line x1="20" y1="105" x2="20" y2="10" stroke="black" stroke-width="2"
-                        fill="none"></line>
-                    <line x1="15" y1="100" x2="170" y2="100" stroke="black" stroke-width="2"
-                        fill="none"></line>
+                    <line x1="20" y1="105" x2="20" y2="10" class="axis"></line>
+                    <line x1="15" y1="100" x2="170" y2="100" class="axis"></line>
 
 
                     <!-- horizontal gridlines -->
@@ -198,7 +227,7 @@
                     <polygon points="20,100 100,65 100,100" stroke-width="0" fill="gainsboro"></polygon>
                     <rect x="100" y="80" width="20" height="20" stroke="black" stroke-width="0"
                         fill="gainsboro"></rect>
-                    <text x="110" y="95" font-family="Roboto" font-size="12" fill="black">1</text>
+                    <text x="109" y="95" font-family="Roboto" font-size="12" fill="black">1</text>
                     <line x1="15" y1="102" x2="165" y2="37" stroke="blue" stroke-width="1"
                         fill="none"></line>
 
