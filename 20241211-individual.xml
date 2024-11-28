@@ -124,7 +124,7 @@
             <answer>1000</answer>
             <answer>11100</answer>
             <answer>1011000</answer>
-            <answer>101101100</answer>
+            <answer>101111100</answer>
             <answer blank="true" correct="true" myAnswerIs="11,111,111,100">None</answer>
         </answers>
         <solution>
@@ -177,6 +177,9 @@
                     <rect x="100" y="55" width="90" height="90" stroke="black" fill="none"></rect>
                     <rect x="145" y="55" width="45" height="45" stroke="black" fill="none"></rect>
                     <line x1="0" y1="100" x2="200" y2="100" stroke="black"></line>
+                    <line x1="100" y1="10" x2="100" y2="100" stroke="black"></line>
+                    <line x1="55" y1="55" x2="100" y2="55" stroke="black"></line>
+                    <line x1="145" y1="100" x2="145" y2="145" stroke="black"></line>
                     <circle cx="100" cy="100" r="2"></circle>
                 </svg>
             </image>
