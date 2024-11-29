@@ -174,7 +174,7 @@
         const solutions = document.getElementsByClassName("solution");
         for (let i = 0; i < solutions.length; i++) {
           if (showSolutions) {
-            solutions[i].style.display = "block";
+            solutions[i].style.display = "inline";
           } else {
             solutions[i].style.display = "none";
           }
@@ -216,7 +216,13 @@
         const title = document.createElement("h2");
         // capitalize first letter of contest
         let contestDisp = contest.charAt(0).toUpperCase() + contest.slice(1);
-        title.textContent = `${contestDisp} Contest, ${formattedDate} at ${host}`;
+        const solutionPrefix = document.createElement("span");
+        solutionPrefix.textContent = "Solutions for ";
+        solutionPrefix.setAttribute("class", "solution");
+        title.appendChild(solutionPrefix);
+        const titleMain = document.createElement("span");
+        titleMain.textContent = `${contestDisp} Contest, ${formattedDate} at ${host}`;
+        title.appendChild(titleMain);
         return title;
       }
 

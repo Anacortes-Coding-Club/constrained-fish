@@ -53,7 +53,7 @@
     </problem>
 
     <problem>
-        <question id="3">
+        <question id="2">
             <image align="right">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="5 10 145 80" width="200"
                     fill="white">
@@ -90,7 +90,7 @@
     </problem>
 
     <problem>
-        <question id="4">
+        <question id="3">
             <image src="seesaw.png" />
             <text>In this problem, use the facts that 1 ton = 2000 lbs. and 1 mile = 5280 feet.
                 An elephant weighing 2.64 tons and a rabbit weighing 1 lb. are on
@@ -116,7 +116,7 @@
     </problem>
 
     <problem>
-        <question id="5">
+        <question id="4">
             <text>What is the smallest positive integer which uses
                 only the digits 0 and 1 and is divisible by 225?</text>
         </question>
@@ -138,7 +138,7 @@
     </problem>
 
     <problem>
-        <question id="6">
+        <question id="5">
             <image>
                 <svg xmlns="http://www.w3.org/2000/svg" class="image" viewBox="0 0 201 105"
                     width="200">
@@ -224,7 +224,7 @@
     </problem>
 
     <problem>
-        <question id="7">
+        <question id="6">
             <text>A sequence is geometric if the ratio of each term to its preceding term always
                 has the same value. In a geometric sequence, if the sum of the first 3 terms is 3
                 and the sum of the first 6 terms is 4, what is the sum of the first 12 terms?</text>
@@ -246,7 +246,7 @@
     </problem>
 
     <problem>
-        <question id="8">
+        <question id="7">
             <text>At a math contest, each student ate at least 1 chocolate.
                 If each student ate a whole number of chocolates,
                 no three students ate the same number of chocolates,
@@ -277,7 +277,7 @@
     </problem>
 
     <problem>
-        <question id="9">
+        <question id="8">
             <image>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 190 200" height="150">
                     <polyline
@@ -442,7 +442,7 @@
     </problem>
 
     <problem>
-        <question id="10">
+        <question id="9">
             <text>If $3^a = 9^b = 27^c$, what is the value of
                 $\dfrac{a}{b} + \dfrac{b}{c} + \dfrac{c}{a}$?</text>
         </question>
@@ -464,7 +464,7 @@
     </problem>
 
     <problem>
-        <question id="11">
+        <question id="10">
             <text>There are two real values of $r$ for which
                 $$x^4 - x^3 - 18x^2 + 52x + k$$
                 has a root of the form $x - r$. One of these values is $r = 2$.
