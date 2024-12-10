@@ -221,7 +221,9 @@
         solutionPrefix.setAttribute("class", "solution");
         title.appendChild(solutionPrefix);
         const titleMain = document.createElement("span");
-        titleMain.textContent = `${contestDisp} Contest, ${formattedDate} at ${host}`;
+        titleMain.textContent = `${contestDisp}${
+          contest === "warmup" ? "" : " Contest"
+        }, ${formattedDate} at ${host}`;
         title.appendChild(titleMain);
         return title;
       }
@@ -245,7 +247,7 @@
           });
       }
 
-      let xmlFile = "20241211-individual.xml";
+      let xmlFile = "20241211-warmup.xml";
 
       loadContest(xmlFile);
       evaluateSolutions();
@@ -313,6 +315,7 @@
     <div class="no-print">
       Select Contest:
       <select id="contest-select" onChange="loadContest(this.value)">
+        <option value="20241211-warmup.xml">Warmup</option>
         <option value="20241211-individual.xml">Individual</option>
         <option value="20241211-team.xml">Team</option>
       </select>

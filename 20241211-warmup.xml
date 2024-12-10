@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test date="2024-12-11" host="Anacortes High School" contest="warmup">
+
+    <problem>
+        <question id="1">
+            <text>If $x = \sqrt{2024}$ and $y = \sqrt{2025}$,
+                what is the simplified numerical value of $(x+y)^2 + (x-y)^2$?</text>
+        </question>
+
+        <solution>
+            <!-- <text>8098.</text> -->
+            <text>
+                Expanding and combining terms,
+                $(x+y)^2 + (x-y)^2 = 2x^2+2y^2 = 2(x^2+y^2) = 2(2024 + 2025) = 8098$.
+            </text>
+        </solution>
+
+    </problem>
+
+
+    <problem>
+        <question id="2">
+            <text>Which is larger, $2^{3000}$ or $3^{2000}$? Bonus: by how much?</text>
+        </question>
+        <solution>
+            <text>
+                Since $2^{3000} = (2^3)^{1000}$ and $3^{2000} = (3^2)^{1000}$,
+                we only need to compare $2^3$ and $3^2$. Since $2^3 \lt 3^2$, $3^{2000}$ is larger.
+                How much larger? $(\dfrac{3^2}{2^3})^{1000}$ is quite a lot!
+                ($\approx 1.42 \times 10^{51}$)</text>
+        </solution>
+
+    </problem>
+
+
+    <problem>
+        <question id="3">
+            <text>I draw a line in the coordinate plane starting at $(0,0)$ and going to $(0,1)$.
+                I then turn 90 degrees to the right and proceed a distance of .5.
+                I then turn 90 degrees to the right and proceed a distance of .25.
+                If I continue this process of turning 90 degrees to the right and then drawing
+                half the distance that I have just traveled indefinitely,
+                at what point, $(x,y)$ form, will I end up?</text>
+        </question>
+        <solution>
+            <!-- <text>$(\dfrac{2}{5}, \dfrac{4}{5})$.</text> -->
+            <text>
+                The motion alternates between vertical and horizontal movements,
+                shrinking each time by a factor of $\dfrac{1}{2}$.
+                The first move is vertical, up 1.
+                The third move is also vertical, down $\dfrac{1}{4}$.
+                The vertical moves continue, alternating between up (+) and down (-):
+                $y = 1-\dfrac{1}{4}+\dfrac{1}{16}- \cdots$.
+                The horizontal moves alternate between right (+) and left (-):
+                $x = \dfrac{1}{2} - \dfrac{1}{8} + \dfrac{1}{32} - \cdots$.
+                These are both geometric series with a common ratio $r$ and initial term $a$.
+                The sum of these infinite geometric series is: $S = \dfrac{a}{1-r}$.
+                For the vertical component, $a = 1$ and $r = -\dfrac{1}{4}$.
+                For horizontal, $a = \dfrac{1}{2}$ and $r = -\dfrac{1}{4}$.
+                So, $y = \dfrac{1}{1 - (-\frac{1}{4})} = \dfrac{4}{5}$ and
+                $x = \dfrac{\frac{1}{2}}{1-(-\frac{1}{4})} = \dfrac{2}{5}$
+                The point at which the path converges is:
+                $(x, y) = (\dfrac{2}{5}, \dfrac{4}{5})$
+            </text>
+        </solution>
+
+    </problem>
+
+</test>
