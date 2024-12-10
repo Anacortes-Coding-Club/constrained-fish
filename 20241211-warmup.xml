@@ -26,8 +26,11 @@
             <text>
                 Since $2^{3000} = (2^3)^{1000}$ and $3^{2000} = (3^2)^{1000}$,
                 we only need to compare $2^3$ and $3^2$. Since $2^3 \lt 3^2$, $3^{2000}$ is larger.
-                How much larger? $(\dfrac{3^2}{2^3})^{1000}$ is quite a lot!
-                ($\approx 1.42 \times 10^{51}$)</text>
+                How much larger? $(\dfrac{3^2}{2^3})^{1000}$ is quite a lot
+                ($\approx 1.42 \times 10^{51}$), and that's just the ratio!
+                Given the ratio is so immense, the difference is approximately the larger number,
+                $3^{2000} - 2^{3000} \approx 3^{2000}$.
+            </text>
         </solution>
 
     </problem>
