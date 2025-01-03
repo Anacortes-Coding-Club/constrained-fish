@@ -83,7 +83,12 @@
                 const image = document.createElement("img");
                 image.src = questionPart.getAttribute("src");
                 image.setAttribute("class", "image");
-                image.setAttribute("width", "300");
+                let width = "300";
+                if (questionPart.getAttribute("width")) {
+                  width = questionPart.getAttribute("width");
+                }
+
+                image.setAttribute("width", width);
                 problemElement.appendChild(image);
               } else {
                 const image = questionPart.getElementsByTagName("svg")[0];
@@ -116,12 +121,12 @@
               );
               if (answerElement.getAttribute("blank")) {
                 answerDisplay = `My answer is:
-                  <span class="myAnswerIsBlank"></span>`;
+              <span class="myAnswerIsBlank"></span>`;
                 if (answerElement.getAttribute("myAnswerIs")) {
                   answerDisplay += `
-                    <span class="myAnswerIs">${answerElement.getAttribute(
-                      "myAnswerIs"
-                    )}</span>`;
+                <span class="myAnswerIs">${answerElement.getAttribute(
+                  "myAnswerIs"
+                )}</span>`;
                 }
               }
 
@@ -169,8 +174,7 @@
         return problemList;
       }
 
-      function evaluateSolutions() {
-        const showSolutions = document.getElementById("showSolutions").checked;
+      function evaluateSolutions(showSolutions) {
         const solutions = document.getElementsByClassName("solution");
         for (let i = 0; i < solutions.length; i++) {
           if (showSolutions) {
@@ -244,13 +248,14 @@
             MathJax.typeset();
             document.getElementById("contest-select").value = xmlFile;
             document.getElementById("showSolutions").checked = false;
+            evaluateSolutions(false);
           });
       }
 
       let xmlFile = "20241211-warmup.xml";
 
       loadContest(xmlFile);
-      evaluateSolutions();
+      evaluateSolutions(false);
     </script>
     <style>
       .container {
@@ -321,7 +326,7 @@
       </select>
       | Mark
       <input
-        onChange="evaluateSolutions()"
+        onChange="evaluateSolutions(this.checked)"
         type="checkbox"
         id="showSolutions"
         name="contest"
