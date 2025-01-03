@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test date="2020-02-12" host="Archbishop Murphy High School" contest="individual">
+    <problem>
+        <question id="1">
+            <text>Your friend flips a fair coin four times. What is the probability he gets more
+                heads than tails?</text>
+        </question>
+        <answers>
+            <answer>$\dfrac{3}{16}$</answer>
+            <answer>$\dfrac{1}{4}$</answer>
+            <answer
+                correct="true">$\dfrac{5}{16}$</answer>
+            <answer>$\dfrac{3}{8}$</answer>
+            <answer
+                blank="true"></answer>
+        </answers>
+    </problem>
+    <problem>
+        <question id="2">
+            <text>Six points are equally spaced around a circle of radius 1. Three of these points
+                are the vertices of a triangle that is neither equilateral nor isosceles. What is
+                the area of this triangle?</text>
+        </question>
+        <answers>
+            <answer> $\sqrt{2}$ </answer>
+            <answer>1</answer>
+            <answer
+                correct="true">$\dfrac{\sqrt{3}}{2}$</answer>
+            <answer>$\dfrac{\sqrt{3}}{3}$</answer>
+            <answer
+                blank="true"></answer>
+        </answers>
+    </problem>
+    <problem>
+        <question id="3">
+            <text> Romeo spent a total of $24 on twelve Valentine gifts. Boxes of candy hearts cost
+                $1 each, milk chocolate hearts cost $3, and boxes of chocolates cost $4. If
+                Romeo bought at least one of each type, how many of the $1 candy heart boxes did he
+                buy?</text>
+        </question>
+        <answers>
+            <answer>4</answer>
+            <answer>5</answer>
+            <answer>6</answer>
+            <answer
+                correct="true">7</answer>
+
+            <answer
+                blank="true"></answer>
+        </answers>
+    </problem>
+    <problem>
+        <question id="4">
+            <text>A line that passes through the origin intersects both the line $x = 1$ and the
+                line
+                $y = \dfrac{\sqrt{3}}{3}x+1$. The three lines create an equilateral triangle.
+                What is the exact perimeter of the triangle?</text>
+        </question>
+        <answers>
+            <answer
+                correct="true">$3+2\sqrt{3}$</answer>
+            <answer>6</answer>
+            <answer>$2+2\sqrt{3}$</answer>
+
+            <answer>$2\sqrt{6}$</answer>
+            <answer
+                blank="true"></answer>
+        </answers>
+    </problem>
+    <problem>
+        <question id="5">
+            <text>Let $A$ be the sum,
+                $\tan(1^\circ) + \tan(3^\circ) + \tan(5^\circ) + \dots + \tan(357^\circ) +
+                \tan(359^\circ)$.
+                What is $A$?</text>
+        </question>
+        <answers>
+            <answer>-1</answer>
+            <answer>$\dfrac{1}{2}$</answer>
+            <answer>1</answer>
+            <answer>71</answer>
+            <answer
+                correct="true" blank="true" myAnswerIs="0">None</answer>
+        </answers>
+    </problem>
+    <problem id="6">
+        <question>
+            <text> The expression, $(x+y)^{100} + (x-y)^{100}$ is simplified by expanding it and
+                combining like terms. How many nonzero terms are in the simplified expression?</text>
+        </question>
+        <answers>
+            <answer>48</answer>
+            <answer>49</answer>
+            <answer>50</answer>
+            <answer
+                correct="true">51</answer>
+            <answer
+                blank="true"></answer>
+        </answers>
+    </problem>
+    <problem id="7">
+        <question>
+            <image align="right" src="20200212-i7.png" width="150" />
+            <text>The diagram at right shows the face of a clock with a circular disk externally
+                tangent at 12 o'clock. The disk has an arrow painted on it, initially directed
+                straight up. Let the disk roll clockwise around the clock. If the diameter of the
+                disk is half the diameter of the clock, where on the clock face will the disk be
+                tangent when the arrow next points straight up?</text>
+        </question>
+        <answers>
+            <answer>3 o'clock</answer>
+            <answer
+                correct="true">4 o'clock</answer>
+            <answer>5 o'clock</answer>
+            <answer>6 o'clock</answer>
+            <answer
+                blank="true"></answer>
+        </answers>
+    </problem>
+    <problem id="8">
+        <question>
+            <text>For all real numbers $x$, let $f$ be a function that satisfies the following
+                equation: $$x \cdot f(x) + f(-x) = x^3$$
+                What is $f(2)$?</text>
+        </question>
+        <answers>
+            <answer
+                correct="true">$\dfrac{8}{5}$</answer>
+            <answer>$\dfrac{8}{3}$</answer>
+            <answer>4</answer>
+            <answer>8</answer>
+            <answer
+                blank="true"></answer>
+        </answers>
+    </problem>
+    <problem id="9">
+        <question>
+            <text>Mrs. Murphy gave an exam in a mathematics class of five students. She entered the
+                scores in random order into a spreadsheet, which recalculated the class average
+                after
+                each score was entered. She noticed that after each score was entered, the average
+                was
+                always an integer. Interesting! The scores (listed in ascending order) were 71, 76,
+                80,
+                82, and 91. What was the last score that Mrs. Murphy entered into the spreadsheet?</text>
+        </question>
+        <answers>
+            <answer>71</answer>
+            <answer>76</answer>
+            <answer correct="true">80</answer>
+            <answer>82</answer>
+            <answer
+                blank="true"></answer>
+        </answers>
+    </problem>
+    <problem id="10">
+        <question>
+            <text>Suppose $0 \lt x \lt \dfrac{\pi}{2}$ and $\log_{24 \sin x}(24 \cos x) =
+                \dfrac{3}{2}$.
+                What is $\cot^2 x$?</text>
+        </question>
+        <answers>
+            <answer>6</answer>
+            <answer>7</answer>
+            <answer correct="true">8</answer>
+            <answer>9</answer>
+            <answer
+                blank="true"></answer>
+        </answers>
+    </problem>
+</test>
