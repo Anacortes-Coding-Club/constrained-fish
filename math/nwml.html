@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NWML Contest</title>
+    <link rel="stylesheet" href="nwml-contest.css" />
+    <script
+      type="text/javascript"
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+    <script src="nwml-contest.js"></script>
+    <script>
+      let contest;
+
+      function getQueryParam(param) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
+      }
+
+      function updateTitle(xmlFile) {
+        // Extract date and contest type from filename for a better title
+        const match = xmlFile.match(/(\d{8})-(\w+)\.xml/);
+        if (match) {
+          const [, dateStr, contestType] = match;
+          const year = dateStr.substring(0, 4);
+          const month = dateStr.substring(4, 6);
+          const day = dateStr.substring(6, 8);
+          const date = new Date(year, month - 1, day);
+          const formattedDate = date.toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          });
+          const contestTypeCapitalized =
+            contestType.charAt(0).toUpperCase() + contestType.slice(1);
+          document.title = `NWML ${contestTypeCapitalized} Contest - ${formattedDate}`;
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const xmlFile = getQueryParam("contest");
+
+        if (!xmlFile) {
+          document.getElementById("goeshere").innerHTML = `
+            <h2>NWML Contest Viewer</h2>
+            <p>Please specify a contest file in the URL. For example:</p>
+            <p><code>nwml.html?contest=20180117-individual.xml</code></p>
+            <p>Available parameters:</p>
+            <ul>
+              <li><strong>contest</strong> - The XML file to load (required)</li>
+            </ul>
+          `;
+          return;
+        }
+
+        updateTitle(xmlFile);
+
+        contest = new NWMLContest();
+        contest.setupEventListeners();
+        contest.loadContest(xmlFile).catch((error) => {
+          document.getElementById("goeshere").innerHTML = `
+            <h2>Error Loading Contest</h2>
+            <p>Could not load contest file: <code>${xmlFile}</code></p>
+            <p>Error: ${error.message}</p>
+            <p>Please check that the file exists and try again.</p>
+          `;
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="no-print">
+      <span class="solutions-toggle">
+        Mark
+        <input type="checkbox" id="showSolutions" />
+        <label for="showSolutions">to show Solutions</label>
+      </span>
+    </div>
+    <div id="goeshere">
+      <h2>Loading Contest...</h2>
+    </div>
+  </body>
+</html>

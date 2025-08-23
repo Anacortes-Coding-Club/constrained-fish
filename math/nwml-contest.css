@@ -1,0 +1,68 @@
+/* NWML Contest Styles */
+
+.container {
+  overflow: hidden; /* Clear the float */
+}
+
+.image {
+  float: right;
+  margin-top: 10px;
+  margin-left: 20px; /* Add some space between text and image */
+}
+
+svg {
+  display: inline-block; /* Allow SVG to respect width and height */
+}
+
+.solution {
+  display: none;
+}
+
+.solution table {
+  border-collapse: collapse;
+}
+
+.solution th,
+.solution td {
+  border: 1px solid black;
+  padding: 4px;
+}
+
+.solution td {
+  text-align: right;
+}
+
+.answer {
+  padding: 4px;
+  margin-right: 1em;
+  display: inline-block;
+}
+
+.myAnswerIsBlank {
+  border-bottom: 1px solid black;
+  display: inline-block;
+  width: 3em;
+}
+
+.myAnswerIs {
+  display: none;
+}
+
+#showSolutions,
+label[for="showSolutions"],
+.solutions-toggle {
+  display: none;
+}
+
+.no-print {
+  display: block;
+}
+
+@media print {
+  li {
+    break-inside: avoid;
+  }
+  .no-print {
+    display: none;
+  }
+}

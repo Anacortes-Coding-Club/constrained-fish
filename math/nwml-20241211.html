@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NWML Contest #3 - December 11, 2024 at Anacortes High School</title>
+    <link rel="stylesheet" href="nwml-contest.css" />
+    <script
+      type="text/javascript"
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+    <script src="nwml-contest.js"></script>
+    <script>
+      let contest;
+      let xmlFile = "20241211-warmup.xml";
+
+      document.addEventListener("DOMContentLoaded", function () {
+        contest = new NWMLContest();
+        contest.setupEventListeners();
+        contest.loadContest(xmlFile);
+      });
+    </script>
+  </head>
+  <body>
+    <div class="no-print">
+      Select Contest:
+      <select id="contest-select">
+        <option value="20241211-warmup.xml">Warmup</option>
+        <option value="20241211-individual.xml">Individual</option>
+        <option value="20241211-team.xml">Team</option>
+      </select>
+      |
+      <span class="solutions-toggle">
+        Mark
+        <input type="checkbox" id="showSolutions" name="contest" value="true" />
+        <label for="showSolutions">to show Solutions</label>
+      </span>
+    </div>
+    <div id="goeshere">
+      <h2>NWML Contest</h2>
+    </div>
+  </body>
+</html>

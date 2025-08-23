@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      NWML Contest #4 - February 12, 2020 at Archbishop Murphy High School
+    </title>
+    <link rel="stylesheet" href="nwml-contest.css" />
+    <script
+      type="text/javascript"
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+    <script src="nwml-contest.js"></script>
+    <script>
+      let contest;
+      let xmlFile = "20200212-individual.xml";
+
+      document.addEventListener("DOMContentLoaded", function () {
+        contest = new NWMLContest();
+        contest.setupEventListeners();
+        contest.loadContest(xmlFile);
+      });
+    </script>
+  </head>
+  <body>
+    <div class="no-print">
+      <span class="solutions-toggle">
+        Mark
+        <input type="checkbox" id="showSolutions" name="contest" value="true" />
+        <label for="showSolutions">to show Solutions</label>
+      </span>
+    </div>
+    <div id="goeshere">
+      <h2>NWML Contest</h2>
+    </div>
+  </body>
+</html>
