@@ -28,42 +28,77 @@ class NWMLContest {
   }
 
   textToParagraph(text) {
-    const paragraph = document.createElement("p");
-    paragraph.textContent = text;
-    // add line breaks
-    paragraph.innerHTML = paragraph.textContent.replace(/\n{2}/g, "<br>");
+    const container = document.createElement("div");
+    
+    // Split text into blocks (paragraphs and lists)
+    const blocks = text.trim().split(/\n\s*\n/);
+    
+    for (let block of blocks) {
+      block = block.trim();
+      if (!block) continue;
+      
+      // Check if this block is a list (lines starting with -)
+      const lines = block.split('\n');
+      const isListBlock = lines.every(line => {
+        const trimmed = line.trim();
+        return trimmed.startsWith('-') || trimmed === '';
+      });
+      
+      if (isListBlock && lines.some(line => line.trim().startsWith('-'))) {
+        // Create an unordered list
+        const ul = document.createElement("ul");
+        for (let line of lines) {
+          line = line.trim();
+          if (!line || !line.startsWith('-')) continue;
+          
+          // Remove the leading dash and trim
+          const listItemText = line.substring(1).trim();
+          const li = document.createElement("li");
+          li.textContent = listItemText;
+          
+          // Apply markdown formatting to list item
+          li.innerHTML = this.applyMarkdownFormatting(li.innerHTML);
+          ul.appendChild(li);
+        }
+        container.appendChild(ul);
+      } else {
+        // Create a paragraph
+        const paragraph = document.createElement("p");
+        paragraph.textContent = block;
+        
+        // Apply markdown formatting
+        paragraph.innerHTML = this.applyMarkdownFormatting(paragraph.innerHTML);
+        container.appendChild(paragraph);
+      }
+    }
+    
+    // If only one child, return that child instead of the wrapper
+    if (container.children.length === 1) {
+      return container.children[0];
+    }
+    
+    return container;
+  }
 
-    // replace markdown bold with HTML bold
-    paragraph.innerHTML = paragraph.innerHTML.replace(
-      /\*\*(.*?)\*\*/g,
-      "<b>$1</b>"
-    );
-
-    // replace markdown italics with HTML italics
-    paragraph.innerHTML = paragraph.innerHTML.replace(
-      /\*(.*?)\*/g,
-      "<i>$1</i>"
-    );
+  applyMarkdownFormatting(html) {
+    // replace markdown bold with HTML bold (but not ** in LaTeX)
+    html = html.replace(/\*\*(.*?)\*\*/g, "<b>$1</b>");
 
     // replace markdown links with HTML links
-    paragraph.innerHTML = paragraph.innerHTML.replace(
+    html = html.replace(
       /\[(.*?)\]\((.*?)\)/g,
       '<a href="$2" target="_blank">$1</a>'
     );
 
     // Replace $$...$$ with \[ ... \]
     const blockPattern = /\$\$([^$]*[^\s$])\$\$/g;
-    paragraph.innerHTML = paragraph.innerHTML.replace(
-      blockPattern,
-      "\\[ $1 \\]"
-    );
+    html = html.replace(blockPattern, "\\[ $1 \\]");
+    
     // Replace $...$ with \( ... \)
     const latexPattern = /\$([^$]*[^\s$])\$/g;
-    paragraph.innerHTML = paragraph.innerHTML.replace(
-      latexPattern,
-      "\\( $1 \\)"
-    );
-    return paragraph;
+    html = html.replace(latexPattern, "\\( $1 \\)");
+    
+    return html;
   }
 
   getProblems(doc) {
